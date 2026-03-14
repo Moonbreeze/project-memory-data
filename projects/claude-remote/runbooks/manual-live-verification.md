@@ -4,7 +4,6 @@ project: claude-remote
 topic: manual-live-verification
 source: agent
 status: active
-project_commit: a9f3e30b3e57de375a441f44623a26e4cac3a3e6
 ---
 # Runbook
 

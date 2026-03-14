@@ -4,7 +4,6 @@ project: project-memory
 topic: mcp-protocol-and-install-guard-cleanup
 source: agent
 status: active
-project_commit: 0dc319610aa9f945a36edb6c2c6306c0dfc37e3b
 ---
 # Session Note
 

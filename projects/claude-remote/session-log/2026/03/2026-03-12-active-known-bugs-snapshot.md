@@ -4,7 +4,6 @@ project: claude-remote
 topic: active-known-bugs-snapshot
 source: agent
 status: active
-project_commit: a9f3e30b3e57de375a441f44623a26e4cac3a3e6
 ---
 # Session Note
 
