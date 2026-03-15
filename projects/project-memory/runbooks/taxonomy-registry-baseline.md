@@ -3,7 +3,7 @@ date: 2026-03-14
 project: project-memory
 topic: taxonomy-registry-baseline
 source: agent
-status: active
+status: archived
 ---
 # Runbook
 

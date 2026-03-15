@@ -3,7 +3,7 @@ date: 2026-03-14
 project: project-memory
 topic: near-term-implementation-sessions
 source: agent
-status: active
+status: archived
 ---
 # Runbook
 

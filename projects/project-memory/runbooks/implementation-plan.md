@@ -3,7 +3,7 @@ date: 2026-03-12
 project: project-memory
 topic: implementation-plan
 source: agent
-status: active
+status: archived
 ---
 # Runbook
 

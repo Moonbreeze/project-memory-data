@@ -3,7 +3,7 @@ date: 2026-03-14
 project: project-memory
 topic: authority-migration-and-archive-policy-baseline
 source: agent
-status: active
+status: archived
 ---
 # Runbook
 

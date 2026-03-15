@@ -3,7 +3,7 @@ date: 2026-03-12
 project: project-memory
 topic: canonical-project-docs-implementation
 source: user
-status: active
+status: archived
 ---
 # Runbook
 

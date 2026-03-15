@@ -3,7 +3,7 @@ date: 2026-03-14
 project: project-memory
 topic: project-scoped-doc-commit-protocol
 source: agent
-status: active
+status: archived
 ---
 # Runbook
 

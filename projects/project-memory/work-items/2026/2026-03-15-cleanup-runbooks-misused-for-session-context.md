@@ -4,17 +4,17 @@ project: project-memory
 topic: cleanup-runbooks-misused-for-session-context
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
 ## Summary
 
-Audit and clean up runbooks that currently contain session chronology or execution context instead of repeatable procedures.
+Audit and clean up runbooks that currently contain session chronology, transient execution context, or misfiled baseline content instead of repeatable procedures.
 
 ## Outcome
 
-Runbooks once again represent repeatable operational procedures, while session history and execution context move into the correct managed document types.
+Project-memory no longer uses active runbooks for transient planning or model baselines, and repeatable procedures are cleanly separated from canonical guidance, rationale, and execution history.
 
 ## Provenance
 
@@ -26,14 +26,15 @@ Runbooks once again represent repeatable operational procedures, while session h
 
 ## Context
 
-- none
+- canonical-doc:project-memory:document-model:document-model
 
 ## Verification
 
-- Identify runbooks whose primary content is session history or transient execution context.
+- Identify runbooks whose primary content is session history, transient execution context, or misfiled baseline guidance.
 - Decide case by case whether each item should be rewritten, split, migrated to another document type, or archived.
-- Leave the remaining runbooks aligned with the current taxonomy and operating model.
+- Leave the remaining active runbooks, if any, aligned with the current taxonomy and operating model.
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-15:cleanup-runbooks-misused-for-session-context
+- verification-result:project-memory:2026-03-15:cleanup-runbooks-misused-for-session-context

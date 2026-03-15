@@ -3,7 +3,7 @@ date: 2026-03-14
 project: project-memory
 topic: work-item-dependency-planning-baseline
 source: agent
-status: active
+status: archived
 ---
 # Runbook
 
