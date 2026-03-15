@@ -1,5 +1,5 @@
 ---
-date: 2026-03-14
+date: 2026-03-15
 project: project-memory
 topic: system-overview
 registry_scope: system
@@ -25,4 +25,3 @@ Project Memory is a two-repository system: this tool repo provides CLI, MCP, val
 - decision: split
 - decision: project-scoped-doc-commit-messages
 - decision: filesystem-persistence-with-future-index
-- runbook: project-scoped-doc-commit-protocol

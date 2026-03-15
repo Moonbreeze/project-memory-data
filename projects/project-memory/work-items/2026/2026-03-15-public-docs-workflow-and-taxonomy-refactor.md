@@ -4,7 +4,7 @@ project: project-memory
 topic: public-docs-workflow-and-taxonomy-refactor
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -37,4 +37,4 @@ A follow-up session can restructure README and repo-local docs around realistic 
 
 ## Evidence
 
-- none
+- verification-result:project-memory:2026-03-15:public-docs-workflow-and-taxonomy-refactor

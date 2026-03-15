@@ -22,7 +22,7 @@ Runbooks once again represent repeatable operational procedures, while session h
 
 ## Dependencies
 
-- none
+- work-item:project-memory:2026-03-15:expand-managed-document-archive-coverage
 
 ## Context
 
