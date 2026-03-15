@@ -4,7 +4,7 @@ project: project-memory
 topic: compact-mcp-write-tool-results
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -37,4 +37,5 @@ Mutating MCP tools return compact structured results by default, with full docum
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-15:compact-mcp-write-tool-results
+- verification-result:project-memory:2026-03-15:compact-mcp-write-tool-results
