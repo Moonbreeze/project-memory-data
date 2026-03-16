@@ -4,7 +4,7 @@ project: project-memory
 topic: implement-ideas-preset-and-idea-triage-flow
 source: user
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ Project-memory exposes an `ideas` preset for draft decisions, documents the idea
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-16:implement-ideas-preset-and-idea-triage-flow
+- verification-result:project-memory:2026-03-16:implement-ideas-preset-and-idea-triage-flow
