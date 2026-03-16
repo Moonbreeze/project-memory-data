@@ -4,7 +4,7 @@ project: project-memory
 topic: make-taxonomy-audit-alias-aware
 source: user
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ Project-memory defines and implements how taxonomy aliases participate in canoni
 
 ## Evidence
 
-- none
+- verification-result:project-memory:2026-03-16:make-taxonomy-audit-alias-aware
+- session-note:project-memory:2026-03-16:make-taxonomy-audit-alias-aware
