@@ -32,6 +32,9 @@ Project-memory has explicit rules for how new decisions relate to prior decision
 
 - Document the intended responsibility split between decision and canonical-doc.
 - Identify failure modes such as duplicate active decisions on one topic or stale canonical docs after a new decision.
+- Define when an accepted and implemented decision should trigger a review of existing canonical guidance, even when no new canonical doc is obviously required during implementation.
+- Define the expected outcomes of that review, such as no change, update canonical-doc, create canonical-doc, or supersede/archive outdated guidance.
+- Use the recently implemented taxonomy governance decisions as a pilot case for this post-decision/post-implementation review trigger and its expected outcomes.
 - Propose targeted process or tool guardrails that reduce contradiction risk without making the write flow unusably heavy.
 
 ## Evidence

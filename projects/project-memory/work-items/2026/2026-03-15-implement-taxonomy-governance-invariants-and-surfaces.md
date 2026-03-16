@@ -4,7 +4,7 @@ project: project-memory
 topic: implement-taxonomy-governance-invariants-and-surfaces
 source: user
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -36,8 +36,8 @@ Project-memory enforces taxonomy registry invariants in shared core logic, suppo
 - Add audit-oriented coverage for duplicate authority detection, unknown scope usage, and retired-topic misuse where the behavior is intended to be machine-detectable.
 - Keep human-choice taxonomy operations such as ambiguous seeding or conflict-resolution judgment as explicit procedure-backed flows with fixtures or targeted examples rather than claiming full automation through tests alone.
 - Expose implemented first-class taxonomy behaviors consistently through shared core logic, CLI commands, and MCP tools so MCP orchestration does not become semantically stronger than CLI.
-- Evaluate whether the implementation establishes stable current-truth guidance that should be captured in a canonical doc; if so, create or update the canonical guidance rather than leaving the model distributed only across decisions, runbooks, and code.
 
 ## Evidence
 
-- none
+- verification-result:project-memory:2026-03-16:implement-taxonomy-governance-invariants-and-surfaces
+- session-note:project-memory:2026-03-16:implement-taxonomy-governance-invariants-and-surfaces

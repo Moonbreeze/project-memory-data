@@ -23,3 +23,4 @@ Enforce taxonomy consistency in two modes: mandatory semantic validation on cano
 - CLI and MCP remain two surfaces over one shared model rather than drifting into separate semantics.
 - Bootstrap, migration, and taxonomy-change audits become explicit operational moments instead of ad hoc cleanups.
 - Operational procedure lives in centralized tool-level guidance instead of being duplicated in every managed project by default.
+- Current duplicate-authority enforcement on canonical-document writes performs a full scan of active project canonical docs; treat that as an intentional current limitation until scale pressure justifies a dedicated index or caching model.
