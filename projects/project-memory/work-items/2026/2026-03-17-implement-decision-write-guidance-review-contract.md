@@ -5,7 +5,7 @@ project: project-memory
 topic: implement-decision-write-guidance-review-contract
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -39,4 +39,5 @@ Project-memory has a concrete implementation slice for enforcing or surfacing st
 
 ## Evidence
 
-- none
+- verification-result:project-memory:2026-03-17:implement-decision-write-guidance-review-contract
+- session-note:project-memory:2026-03-17:implement-decision-write-guidance-review-contract
