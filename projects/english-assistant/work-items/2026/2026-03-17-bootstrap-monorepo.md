@@ -1,10 +1,11 @@
 ---
 date: 2026-03-17
+recorded_at: 2026-03-17T00:00:00.000Z
 project: english-assistant
 topic: bootstrap-monorepo
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
