@@ -4,7 +4,7 @@ project: project-memory
 topic: intra-day-document-ordering-and-timeline-model
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -26,7 +26,7 @@ Project-memory can answer newest-within-day questions and support a stable human
 
 ## Context
 
-- none
+- decision:project-memory:2026-03-17:document-timeline-and-latest-first-query-defaults
 
 ## Verification
 
@@ -36,4 +36,5 @@ Project-memory can answer newest-within-day questions and support a stable human
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-17:document-timeline-implementation
+- verification-result:project-memory:2026-03-17:document-timeline-and-latest-first-query-defaults
