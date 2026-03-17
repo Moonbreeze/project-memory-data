@@ -3,8 +3,8 @@ date: 2026-03-17
 project: english-assistant
 topic: project-bootstrap
 source: agent
-status: active
-work_item_state: open
+status: archived
+work_item_state: canceled
 ---
 # Work Item
 
