@@ -5,7 +5,7 @@ project: project-memory
 topic: fix-upsert-work-item-repair-flow-for-invalid-done-items
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ Project-memory can repair an already-invalid done work-item through upsert_work_
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-21:fix-upsert-work-item-repair-flow-for-invalid-done-items
+- verification-result:project-memory:2026-03-21:fix-upsert-work-item-repair-flow-for-invalid-done-items
