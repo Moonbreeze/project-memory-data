@@ -37,4 +37,4 @@ SQLite через better-sqlite3: инициализация, схема, про
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-03-17:bootstrap-retrospective

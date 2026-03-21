@@ -37,4 +37,4 @@ Vite + React + Redux Toolkit: базовая структура, proxy на се
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-03-17:bootstrap-retrospective
