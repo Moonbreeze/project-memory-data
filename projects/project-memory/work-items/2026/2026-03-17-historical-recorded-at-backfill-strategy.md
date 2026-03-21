@@ -5,7 +5,7 @@ project: project-memory
 topic: historical-recorded-at-backfill-strategy
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,4 @@ Project-memory has an explicit decision about whether historical `recorded_at` b
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-21:historical-recorded-at-backfill-policy
