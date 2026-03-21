@@ -4,7 +4,7 @@ recorded_at: 2026-03-21T00:00:00.000Z
 project: project-memory
 topic: surface-taxonomy-migration-enums-and-actionable-validation-errors
 source: user
-status: active
+status: archived
 work_item_state: done
 ---
 # Work Item

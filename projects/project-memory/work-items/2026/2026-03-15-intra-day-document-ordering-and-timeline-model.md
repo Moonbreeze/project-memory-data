@@ -1,9 +1,10 @@
 ---
 date: 2026-03-15
+recorded_at: 2026-03-15T00:00:00.000Z
 project: project-memory
 topic: intra-day-document-ordering-and-timeline-model
 source: agent
-status: active
+status: archived
 work_item_state: done
 ---
 # Work Item

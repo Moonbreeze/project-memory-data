@@ -1,9 +1,10 @@
 ---
 date: 2026-03-15
+recorded_at: 2026-03-15T00:00:00.000Z
 project: project-memory
 topic: implement-taxonomy-governance-invariants-and-surfaces
 source: user
-status: active
+status: archived
 work_item_state: done
 ---
 # Work Item
