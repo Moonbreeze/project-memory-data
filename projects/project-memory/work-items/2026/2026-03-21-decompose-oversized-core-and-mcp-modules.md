@@ -5,7 +5,7 @@ project: project-memory
 topic: decompose-oversized-core-and-mcp-modules
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ The repository has a tracked implementation slice for decomposing oversized modu
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-21:decompose-oversized-core-and-mcp-modules
+- verification-result:project-memory:2026-03-21:decompose-oversized-core-and-mcp-modules
