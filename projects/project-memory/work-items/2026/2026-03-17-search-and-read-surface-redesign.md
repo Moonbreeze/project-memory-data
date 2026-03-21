@@ -5,7 +5,7 @@ project: project-memory
 topic: search-and-read-surface-redesign
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ The project has a tracked implementation slice for separating keyword recall fro
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-21:search-and-read-surface-redesign
+- verification-result:project-memory:2026-03-21:search-and-read-surface-redesign
