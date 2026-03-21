@@ -4,7 +4,7 @@ recorded_at: 2026-03-21T00:00:00.000Z
 project: project-memory
 topic: project-scoped-managed-commit-selection
 source: agent
-status: active
+status: archived
 ---
 # Decision
 
