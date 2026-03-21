@@ -1,5 +1,6 @@
 ---
 date: 2026-03-15
+recorded_at: 2026-03-15T00:00:00.000Z
 project: project-memory
 topic: align-mcp-tool-descriptions-with-documentation-model
 source: agent
@@ -39,4 +40,5 @@ An external MCP consumer that sees only the tool catalog and tool descriptions c
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-15:align-mcp-tool-descriptions-with-documentation-model
+- verification-result:project-memory:2026-03-15:align-mcp-tool-descriptions-with-documentation-model

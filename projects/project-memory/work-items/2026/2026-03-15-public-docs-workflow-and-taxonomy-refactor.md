@@ -1,5 +1,6 @@
 ---
 date: 2026-03-15
+recorded_at: 2026-03-15T00:00:00.000Z
 project: project-memory
 topic: public-docs-workflow-and-taxonomy-refactor
 source: agent
@@ -37,4 +38,5 @@ A follow-up session can restructure README and repo-local docs around realistic 
 
 ## Evidence
 
+- session-note:project-memory:2026-03-21:public-docs-workflow-and-taxonomy-refactor
 - verification-result:project-memory:2026-03-15:public-docs-workflow-and-taxonomy-refactor

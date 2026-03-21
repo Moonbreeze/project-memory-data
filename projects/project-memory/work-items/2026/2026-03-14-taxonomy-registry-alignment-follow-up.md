@@ -43,4 +43,5 @@ project-memory has an active taxonomy registry document with explicit topic reco
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-21:taxonomy-registry-alignment-follow-up
+- verification-result:project-memory:2026-03-21:taxonomy-registry-alignment-follow-up
