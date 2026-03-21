@@ -1,6 +1,6 @@
 ---
-date: 2026-03-17
-recorded_at: 2026-03-17T00:00:00.000Z
+date: 2026-03-21
+recorded_at: 2026-03-21T00:00:00.000Z
 project: project-memory
 topic: document-model
 registry_scope: document-model
@@ -11,7 +11,7 @@ status: active
 
 ## Summary
 
-The managed data model is based on project-scoped Markdown documents with validated frontmatter, stable path rules, typed document roles, explicit lifecycle semantics, declared authority boundaries, and explicit decision-write review semantics rather than ad hoc repository files or implicit conventions.
+The managed data model is based on project-scoped Markdown documents with validated frontmatter, stable path rules, typed document roles, explicit lifecycle semantics, declared authority boundaries, explicit decision-write review semantics, and explicit timeline semantics for chronological ordering.
 
 ## Guidance
 
@@ -27,6 +27,9 @@ The managed data model is based on project-scoped Markdown documents with valida
 - Archive work items only after they reach done or canceled and no longer belong in active planning; do not use archival as the normal moment of completion.
 - Treat cross-project references as explicit links, not as implicit authority transfer or default read widening.
 - Do not overload decisions as executable backlog items; long-lived rationale, current truth, operational guidance, and executable work must remain distinct document roles.
+- Use `recorded_at` as the managed timeline key for intra-day chronology while keeping `date` as the day-level bucket and path key.
+- When a stored document lacks explicit `recorded_at`, use a deterministic fallback derived from `date` rather than filesystem metadata or path-name accidents.
+- Treat timeline-aware chronological ordering as `date`, then `recorded_at`, then `relativePath`, with descending order meaning newest-first and ascending order meaning oldest-first.
 - Require non-draft decision writes to record an explicit stable-guidance review outcome, while draft decisions remain the lightweight idea-inbox form.
 - Use explicit review outcomes to distinguish reviewed-no-change, update-required, updated, and bootstrap-exempt decision writes rather than leaving stable-guidance handling implicit.
 - Treat each decision path as an immutable durable record; create a new decision or apply lifecycle semantics such as supersession instead of overwriting an existing dated decision path.
@@ -39,4 +42,5 @@ The managed data model is based on project-scoped Markdown documents with valida
 - decision: topic-and-scope-registry
 - decision: taxonomy-registry-baseline
 - decision: decision-write-guidance-review-contract
+- decision: document-timeline-and-latest-first-query-defaults
 - canonical-doc: taxonomy-registry

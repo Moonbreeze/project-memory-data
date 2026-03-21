@@ -23,3 +23,8 @@ Add an explicit `recorded_at` frontmatter field to the managed document model as
 - `path` ordering remains available for deterministic low-level inspection instead of being the implicit default for ordinary list usage.
 - Bounded-read contracts stay explicit: path-ordered stages remain path-ordered, while recent/newest/planning-ranked stages can adopt timeline-aware chronology without widening their scope.
 - A future relevance-ranked search model can reuse `recorded_at` as a chronology tie-break instead of redefining timeline semantics again.
+
+## Stable Guidance Review
+
+- Outcome: updated
+- Summary: Updated stable guidance by adding explicit timeline and `recorded_at` ordering semantics to the active document-model and bounded-read canonical docs, including the rule that explicitly path-ordered stages remain path-ordered.

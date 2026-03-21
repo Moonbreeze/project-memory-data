@@ -24,3 +24,6 @@ Require non-draft decision writes to record an explicit stable-guidance review o
 - Decision records become immutable by path, so later durable rationale must be expressed as a new record or lifecycle transition instead of overwrite.
 
 ## Stable Guidance Review
+
+- Outcome: updated
+- Summary: Updated stable guidance to reflect the new contract by adding explicit decision-write review semantics and immutable decision-path guidance to the active document-model canonical doc, alongside matching repository documentation updates.

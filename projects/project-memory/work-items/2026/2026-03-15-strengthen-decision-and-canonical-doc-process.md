@@ -5,7 +5,7 @@ project: project-memory
 topic: strengthen-decision-and-canonical-doc-process
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -41,4 +41,7 @@ Project-memory has explicit rules for how new decisions relate to prior decision
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-17:implement-decision-write-guidance-review-contract
+- verification-result:project-memory:2026-03-17:implement-decision-write-guidance-review-contract
+- session-note:project-memory:2026-03-21:decision-and-canonical-doc-process-audit-cleanup
+- session-note:project-memory:2026-03-21:strengthen-decision-and-canonical-doc-process-finalization
