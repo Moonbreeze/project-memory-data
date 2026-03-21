@@ -1,10 +1,11 @@
 ---
 date: 2026-03-14
+recorded_at: 2026-03-14T00:00:00.000Z
 project: project-memory
 topic: taxonomy-registry-alignment-follow-up
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 

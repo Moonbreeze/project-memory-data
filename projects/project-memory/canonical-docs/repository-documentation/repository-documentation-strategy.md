@@ -1,10 +1,11 @@
 ---
-date: 2026-03-15
+date: 2026-03-21
+recorded_at: 2026-03-21T00:00:00.000Z
 project: project-memory
 topic: repository-documentation-strategy
-registry_scope: system
+registry_scope: repository-documentation
 source: user
-status: archived
+status: active
 ---
 # Canonical Doc
 
