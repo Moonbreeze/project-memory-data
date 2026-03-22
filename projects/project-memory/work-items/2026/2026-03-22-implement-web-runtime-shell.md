@@ -5,7 +5,7 @@ project: project-memory
 topic: implement-web-runtime-shell
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -40,4 +40,5 @@ The repository has a new src/web entrypoint with a minimal HTTP server, route di
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-22:implement-web-runtime-shell
+- verification-result:project-memory:2026-03-22:implement-web-runtime-shell
