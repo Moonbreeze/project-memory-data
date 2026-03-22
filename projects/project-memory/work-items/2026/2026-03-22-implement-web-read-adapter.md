@@ -5,7 +5,7 @@ project: project-memory
 topic: implement-web-read-adapter
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -40,4 +40,5 @@ The Web layer has typed adapter helpers that call shared core list, read, bounde
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-22:implement-web-read-adapter
+- verification-result:project-memory:2026-03-22:implement-web-read-adapter
