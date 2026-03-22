@@ -11,11 +11,11 @@ work_item_state: open
 
 ## Summary
 
-Execute a full hard rename from `claude-remote` to `Waypoint` across repository identity, package metadata, runtime defaults, protocol client identity, and project-memory naming surfaces.
+Execute a full prerelease hard rename from `claude-remote` to `Waypoint` across repository identity, package metadata, runtime defaults, protocol client identity, and rename-sensitive test fixtures.
 
 ## Outcome
 
-The project uses `Waypoint` consistently for repository/package/runtime identity, existing users retain access to persisted session state through an explicit compatibility path, and naming drift between code, docs, protocol metadata, and project-memory is removed.
+The project uses `Waypoint` consistently for repository/package/runtime identity, the default persisted state path is `~/.waypoint/sessions.json`, and prerelease persistence under the old `~/.claude-remote` path is intentionally left without compatibility handling.
 
 ## Provenance
 
@@ -28,15 +28,16 @@ The project uses `Waypoint` consistently for repository/package/runtime identity
 ## Context
 
 - decision:claude-remote:2026-03-22:hard-rename-to-waypoint
+- decision:claude-remote:2026-03-22:waypoint-prerelease-persistence-break
 
 ## Verification
 
 - Rename repository/package-facing identifiers such as `package.json`, lockfile metadata, user-facing descriptions, and protocol client identity without leaving mixed `claude-remote`/`Waypoint` branding in the active runtime path.
-- Introduce and verify an explicit persistence-path compatibility strategy so existing `~/.claude-remote/...` state is discovered or migrated safely before switching defaults to a `Waypoint` path.
-- Update tests and temporary-path fixtures so the suite no longer encodes the old project name except where backward-compatibility behavior is under test.
-- Define and execute the project-memory migration strategy for project slug/topic references if the rename is intended to extend to the managed knowledge base.
-- Run `npm run build` and the narrowest relevant test subsets, then broaden verification once rename-related changes pass.
+- Switch the default persistence path to `~/.waypoint/sessions.json` without adding discovery or migration support for the old prerelease `~/.claude-remote` path.
+- Update tests and temporary-path fixtures so the suite no longer encodes the old project name in active rename-sensitive scenarios.
+- Run `npm run build` and the narrowest relevant test subset for config, persistence bootstrap, session persistence, and Codex initialization.
 
 ## Evidence
 
-- none
+- session-note:claude-remote:2026-03-22:hard-rename-to-waypoint
+- verification-result:claude-remote:2026-03-22:hard-rename-to-waypoint
