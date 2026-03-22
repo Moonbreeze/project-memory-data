@@ -4,8 +4,8 @@ recorded_at: 2026-03-22T00:00:00.000Z
 project: waypoint
 topic: migration-final-cleanup-closure
 source: agent
-status: active
-work_item_state: blocked
+status: archived
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ The repository no longer presents the multi-provider migration as active operati
 
 ## Evidence
 
-- none
+- session-note:waypoint:2026-03-22:migration-final-cleanup-closure
+- verification-result:waypoint:2026-03-22:migration-final-cleanup-closure

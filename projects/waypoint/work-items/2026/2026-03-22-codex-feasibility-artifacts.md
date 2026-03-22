@@ -4,8 +4,8 @@ recorded_at: 2026-03-22T00:00:00.000Z
 project: waypoint
 topic: codex-feasibility-artifacts
 source: agent
-status: active
-work_item_state: blocked
+status: archived
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ The missing feasibility-gate artifacts for `codex app-server` are recorded, and 
 
 ## Evidence
 
-- none
+- session-note:waypoint:2026-03-22:codex-feasibility-artifacts
+- verification-result:waypoint:2026-03-22:codex-feasibility-artifacts

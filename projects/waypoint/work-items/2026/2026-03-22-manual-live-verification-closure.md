@@ -4,8 +4,8 @@ recorded_at: 2026-03-22T00:00:00.000Z
 project: waypoint
 topic: manual-live-verification-closure
 source: agent
-status: active
-work_item_state: blocked
+status: archived
+work_item_state: canceled
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ Real-provider live verification is either completed with evidence or explicitly 
 
 ## Evidence
 
-- none
+- session-note:waypoint:2026-03-22:manual-live-verification-closure
+- verification-result:waypoint:2026-03-22:manual-live-verification-closure

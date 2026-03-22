@@ -10,18 +10,18 @@ status: active
 
 ## Overview
 
-Treat `codex app-server` as a JSON-RPC backend over `stdio` for the migrated runtime. The repository has a minimal client, mocked protocol coverage, provider tests for thread and turn flow, approval routing, result and error handling, and opt-in live smoke coverage against a real local Codex CLI.
+Treat `codex app-server` as a JSON-RPC backend over `stdio` for the migrated runtime. The repository now has provider tests, live smoke hooks, and a recorded feasibility artifact set covering CLI help, generated protocol bindings, and a real stdio handshake through `initialize`, `thread/start`, and `turn/start`.
 
 ## Constraints
 
 - `stdio` is the only supported Codex transport in this repository today.
-- There is still no checked-in manual artifact set from the original feasibility-gate commands.
-- The real live event-stream shape has not yet been fully recorded as a standalone manual feasibility report.
+- The recorded feasibility handshake observed `initialize`, `thread/start`, `turn/start`, and a `thread/started` notification, but it did not exercise approval requests, user-input requests, or the full turn-completion event stream.
 - WebSocket transport remains unsupported and must not be treated as implemented or configurable.
+- Local `codex app-server` invocations may emit non-fatal warnings about failing to update PATH or clean up stale arg0 temp dirs under restricted permissions.
 
 ## Guidance
 
-- Keep Codex integration framed as code-validated and smoke-validated, but not fully documented by a manual feasibility report until the missing artifacts are recorded.
-- To close the original feasibility gate, manually run and record `codex app-server --help`, `codex app-server generate-json-schema --out <tmp-dir>`, `codex app-server generate-ts --out <tmp-dir>`, and a minimal live handshake that captures `initialize`, thread creation or resume, `turn/start`, and representative notifications or requests.
+- Use the recorded feasibility artifacts from 2026-03-22 as the baseline contract evidence for Codex integration instead of treating the protocol as unvalidated.
+- Expect a successful `turn/start` request to return an in-progress turn first; additional completion, plan, approval, or command-stream events must be validated separately depending on scenario.
+- Use `npm run test:live` with explicit `LIVE_SMOKE_CODEX*` flags for opt-in real-backend smoke checks; without those flags the suite should skip safely.
 - Reintroduce any non-stdio transport only after a separate validation pass confirms the contract and a real client implementation exists.
-- If live Codex checks fail only inside a restricted sandbox and pass outside it, treat that as an environment limitation unless stronger evidence indicates a product regression.
