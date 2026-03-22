@@ -4,7 +4,7 @@ recorded_at: 2026-03-22T00:00:00.000Z
 project: claude-remote
 topic: waypoint-prerelease-persistence-break
 source: agent
-status: active
+status: archived
 ---
 # Decision
 

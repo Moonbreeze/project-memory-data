@@ -4,8 +4,8 @@ recorded_at: 2026-03-22T09:30:48.258Z
 project: claude-remote
 topic: codex-feasibility-artifacts
 source: agent
-status: active
-work_item_state: blocked
+status: archived
+work_item_state: canceled
 ---
 # Work Item
 

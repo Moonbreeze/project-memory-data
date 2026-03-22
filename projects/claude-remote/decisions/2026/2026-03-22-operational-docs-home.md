@@ -4,7 +4,7 @@ recorded_at: 2026-03-22T09:31:09.457Z
 project: claude-remote
 topic: operational-docs-home
 source: agent
-status: active
+status: archived
 ---
 # Decision
 

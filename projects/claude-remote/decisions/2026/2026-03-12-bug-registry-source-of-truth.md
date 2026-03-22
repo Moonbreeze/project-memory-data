@@ -3,7 +3,7 @@ date: 2026-03-12
 project: claude-remote
 topic: bug-registry-source-of-truth
 source: agent
-status: active
+status: archived
 ---
 # Decision
 

@@ -4,7 +4,7 @@ recorded_at: 2026-03-22T09:37:21.270Z
 project: claude-remote
 topic: hard-rename-to-waypoint
 source: agent
-status: active
+status: archived
 ---
 # Decision
 

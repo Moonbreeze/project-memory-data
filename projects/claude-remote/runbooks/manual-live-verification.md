@@ -4,7 +4,7 @@ recorded_at: 2026-03-22T09:30:48.245Z
 project: claude-remote
 topic: manual-live-verification
 source: agent
-status: active
+status: archived
 ---
 # Runbook
 

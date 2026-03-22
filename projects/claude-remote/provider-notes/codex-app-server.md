@@ -4,7 +4,7 @@ recorded_at: 2026-03-22T09:30:48.256Z
 project: claude-remote
 topic: codex-app-server
 source: agent
-status: active
+status: archived
 ---
 # Provider Note
 

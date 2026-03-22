@@ -3,7 +3,7 @@ date: 2026-03-12
 project: claude-remote
 topic: multi-provider-runtime-architecture
 source: agent
-status: active
+status: archived
 ---
 # Decision
 

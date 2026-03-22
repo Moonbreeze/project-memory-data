@@ -4,8 +4,8 @@ recorded_at: 2026-03-22T09:30:48.262Z
 project: claude-remote
 topic: migration-final-cleanup-closure
 source: agent
-status: active
-work_item_state: blocked
+status: archived
+work_item_state: canceled
 ---
 # Work Item
 

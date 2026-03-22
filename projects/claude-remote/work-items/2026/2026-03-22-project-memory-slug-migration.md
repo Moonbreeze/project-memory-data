@@ -4,8 +4,8 @@ recorded_at: 2026-03-22T00:00:00.000Z
 project: claude-remote
 topic: project-memory-slug-migration
 source: user
-status: active
-work_item_state: open
+status: archived
+work_item_state: canceled
 ---
 # Work Item
 
