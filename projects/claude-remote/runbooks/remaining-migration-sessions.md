@@ -1,5 +1,6 @@
 ---
-date: 2026-03-12
+date: 2026-03-22
+recorded_at: 2026-03-22T09:30:48.254Z
 project: claude-remote
 topic: remaining-migration-sessions
 source: agent
@@ -9,20 +10,20 @@ status: active
 
 ## Purpose
 
-Track the remaining execution backlog after the large multi-provider refactor, based on docs/nextSessions.md.
+Summarize the remaining migration and closure arc now that executable backlog lives in project-memory work items instead of the repo-local nextSessions document.
 
 ## Procedure
 
-- Treat docs/nextSessions.md as the session-scoped execution backlog and run only one listed session per work session unless scope is explicitly broadened.
-- Assume Session 1 (plan reconciliation), Session 2 (structured user input honesty), and Session 3 (Web verification hardening) are already completed as of 2026-03-11.
-- Treat Session 4 (Live Verification) as partially complete: automated build, test, and opt-in live smoke coverage are recorded, but real approval flows, Telegram end-to-end checks, Web live checks, and Claude elicitation edge cases still remain open.
-- Treat Session 5 (Final Cleanup And Closure) as the current remaining cleanup pass: align docs with the final implementation, remove or mark unsupported or experimental leftovers, review package.json for stale migration remnants, and confirm KNOWN_BUGS.md contains only active items.
-- When executing any session, read docs/nextSessions.md plus the relevant part of MULTI_PROVIDER_REFACTOR_PLAN.md first, keep scope local, preserve provider-neutral boundaries, and update docs in the same session when behavior changes.
-- If a real bug is discovered during a session, add or update a regression test and record it in src/__tests__/KNOWN_BUGS.md.
+- Use the project planning backlog, not a repo-local markdown file, as the executable source for the remaining migration work.
+- Treat the large runtime migration as functionally complete: the provider-neutral core, persistence, Telegram transport, Web transport, Claude provider, Codex provider, and composition root are already present, and the legacy tmux runtime path has already been removed from `src/`.
+- Treat the main remaining gaps as: missing recorded Codex feasibility artifacts, incomplete manual live verification closure, and final cleanup so the repository reflects a post-migration maintenance state instead of an in-progress refactor state.
+- Preserve the working rules from the old session backlog: keep scope local, prefer additive or local changes over broad rewrites, keep provider boundaries provider-neutral, update docs when behavior changes, and record any real bug in `src/__tests__/KNOWN_BUGS.md` with regression coverage.
+- Preserve the verification rules from the old session backlog: run `npm run build` after meaningful changes, start with the narrowest relevant vitest subset, broaden after the narrow checks pass, and treat Web test failures caused only by denied local `listen(...)` as environment limitations unless stronger product evidence exists.
+- Use the managed work items `codex-feasibility-artifacts`, `manual-live-verification-closure`, and `migration-final-cleanup-closure` as the explicit remaining backlog slices rather than reviving session-numbered repo docs.
+- When reporting a session, state what changed, what was verified, any unresolved risks, and whether the work-item acceptance criteria were fully met.
 
 ## Verification
 
-- After meaningful changes, run npm run build.
-- Run the narrowest relevant vitest subset before broader test coverage.
-- Treat Web server failures caused only by local listen(...) restrictions as environment limitations, not product regressions, unless application evidence says otherwise.
-- Final session reporting should explicitly state what changed, what was verified, any unresolved risks, and whether the session acceptance criteria were fully met.
+- Historical state from 2026-03-11: the old Session 1 plan reconciliation, Session 2 structured user-input honesty work, and Session 3 Web verification hardening were completed.
+- Historical state from 2026-03-11: the old Session 4 live verification was only partially completed because approval flows remained inconclusive under local auto-approval policy and interactive Telegram and Web checks were not fully exercised.
+- The project planning backlog was intentionally empty before this migration; managed work items now carry the remaining executable backlog explicitly.
