@@ -1,0 +1,29 @@
+---
+date: 2026-03-12
+recorded_at: 2026-03-12T00:00:00.000Z
+project: waypoint
+topic: bug-registry-source-of-truth
+source: agent
+status: active
+---
+# Decision
+
+## Context
+
+The repository keeps an explicit known-bugs registry in src/__tests__/KNOWN_BUGS.md. Future sessions may benefit from remembering that active bug state through project-memory, but duplicating the entire registry in two mutable places would create drift risk.
+
+## Decision
+
+Keep src/__tests__/KNOWN_BUGS.md as the canonical bug registry and regression index. Use project-memory only for lightweight summaries of active bug state when that context helps future sessions start faster, not as a second authoritative bug database.
+
+## Consequences
+
+- When a new bug is discovered, it must still be added to src/__tests__/KNOWN_BUGS.md and covered by a regression test there.
+- Project-memory may record the currently active bug snapshot or major bug-state changes, but it should not replace or diverge from the repository file.
+- Future cleanup sessions should verify that project-memory bug summaries still match the active repo registry before relying on them.
+
+## Stable Guidance Review
+
+- Outcome: bootstrap-exempt
+- Summary: Bootstrap-style decision write where no prior stable-guidance surface existed yet.
+- Note: Historical decision migrated from the legacy claude-remote project slug without changing guidance.
