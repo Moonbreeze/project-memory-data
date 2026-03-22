@@ -5,7 +5,7 @@ project: claude-remote
 topic: hard-rename-to-waypoint
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
