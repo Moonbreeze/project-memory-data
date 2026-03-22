@@ -5,7 +5,7 @@ project: claude-remote
 topic: hard-rename-to-waypoint
 source: agent
 status: active
-work_item_state: blocked
+work_item_state: open
 ---
 # Work Item
 
@@ -19,7 +19,7 @@ The project uses `Waypoint` consistently for repository/package/runtime identity
 
 ## Provenance
 
-- decision:claude-remote:2026-03-14:runtime-name
+- decision:claude-remote:2026-03-22:hard-rename-to-waypoint
 
 ## Dependencies
 
@@ -27,7 +27,7 @@ The project uses `Waypoint` consistently for repository/package/runtime identity
 
 ## Context
 
-- decision:claude-remote:2026-03-14:runtime-name
+- decision:claude-remote:2026-03-22:hard-rename-to-waypoint
 
 ## Verification
 

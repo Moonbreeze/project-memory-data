@@ -3,7 +3,7 @@ date: 2026-03-14
 project: claude-remote
 topic: runtime-name
 source: agent
-status: draft
+status: archived
 ---
 # Decision
 
