@@ -5,7 +5,7 @@ project: project-memory
 topic: implement-web-timeline-view
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -42,4 +42,5 @@ The Web UI has a main timeline page that lists managed documents in the existing
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-24:implement-web-timeline-view
+- verification-result:project-memory:2026-03-24:implement-web-timeline-view
