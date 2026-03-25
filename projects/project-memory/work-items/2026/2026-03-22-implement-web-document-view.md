@@ -5,7 +5,7 @@ project: project-memory
 topic: implement-web-document-view
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -41,4 +41,5 @@ The Web UI has an exact document route that renders one managed document with pr
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-25:implement-web-document-view
+- verification-result:project-memory:2026-03-25:implement-web-document-view
