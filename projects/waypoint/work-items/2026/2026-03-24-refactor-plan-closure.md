@@ -3,9 +3,9 @@ date: 2026-03-24
 recorded_at: 2026-03-24T00:00:00.000Z
 project: waypoint
 topic: refactor-plan-closure
-source: user
+source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -15,7 +15,7 @@ work_item_state: open
 
 ## Outcome
 
-MULTI_PROVIDER_REFACTOR_PLAN.md либо содержит явную пометку о завершении, либо удалён из репо с фиксацией в decision/session-note. CLAUDE.md больше не ссылается на него как на source of truth для активной работы.
+MULTI_PROVIDER_REFACTOR_PLAN.md удалён из репо. CLAUDE.md больше не ссылается на него как на source of truth для активной работы.
 
 ## Provenance
 
@@ -27,14 +27,13 @@ MULTI_PROVIDER_REFACTOR_PLAN.md либо содержит явную помет�
 
 ## Context
 
-- decision:waypoint:2026-03-12:multi-provider-runtime-architecture
+- none
 
 ## Verification
 
-- MULTI_PROVIDER_REFACTOR_PLAN.md закрыт или удалён
+- MULTI_PROVIDER_REFACTOR_PLAN.md удалён из репо
 - Ссылки в CLAUDE.md актуализированы
-- Decision зафиксирован в project-memory
 
 ## Evidence
 
-- none
+- session-note:waypoint:2026-03-25:refactor-plan-closure
