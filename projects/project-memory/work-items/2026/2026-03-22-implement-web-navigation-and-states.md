@@ -5,7 +5,7 @@ project: project-memory
 topic: implement-web-navigation-and-states
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -40,4 +40,5 @@ The read-only Web UI has clear navigation between timeline and document pages pl
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-28:implement-web-navigation-and-states
+- verification-result:project-memory:2026-03-28:implement-web-navigation-and-states
