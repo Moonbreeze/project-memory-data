@@ -5,7 +5,7 @@ project: project-memory
 topic: implement-web-markdown-rendering
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -39,4 +39,5 @@ The Web layer has a dedicated, safe Markdown-to-HTML rendering path for managed 
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-28:implement-web-markdown-rendering
+- verification-result:project-memory:2026-03-28:implement-web-markdown-rendering
