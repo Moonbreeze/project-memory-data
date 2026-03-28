@@ -45,3 +45,5 @@ The Web timeline exposes visible project, type, and status controls, applies the
 
 - session-note:project-memory:2026-03-28:add-timeline-filter-controls-to-web-ui
 - verification-result:project-memory:2026-03-28:add-timeline-filter-controls-to-web-ui
+- session-note:project-memory:2026-03-28:web-timeline-semantic-previews-and-sticky-filter-accordion
+- verification-result:project-memory:2026-03-28:web-timeline-semantic-previews-and-sticky-filter-accordion

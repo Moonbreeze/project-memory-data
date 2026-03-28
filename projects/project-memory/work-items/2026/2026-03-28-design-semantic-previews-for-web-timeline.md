@@ -5,7 +5,7 @@ project: project-memory
 topic: design-semantic-previews-for-web-timeline
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -41,4 +41,5 @@ Project-memory has an explicit design for type-aware semantic previews in the We
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-28:web-timeline-semantic-previews-and-sticky-filter-accordion
+- verification-result:project-memory:2026-03-28:web-timeline-semantic-previews-and-sticky-filter-accordion
