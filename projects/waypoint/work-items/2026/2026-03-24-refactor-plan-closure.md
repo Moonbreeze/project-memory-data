@@ -4,7 +4,7 @@ recorded_at: 2026-03-24T00:00:00.000Z
 project: waypoint
 topic: refactor-plan-closure
 source: agent
-status: active
+status: archived
 work_item_state: done
 ---
 # Work Item
