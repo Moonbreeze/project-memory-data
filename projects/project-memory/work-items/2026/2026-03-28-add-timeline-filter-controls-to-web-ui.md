@@ -5,21 +5,21 @@ project: project-memory
 topic: add-timeline-filter-controls-to-web-ui
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
 ## Summary
 
-Add visible filter controls to the Web timeline so project, type, and status filtering can be changed directly from the page.
+Add explicit timeline filter controls and a denser sticky browsing shell to the Web UI so filtering can be changed directly from the page without leaving the URL-driven read model.
 
 ## Outcome
 
-The Web timeline page exposes explicit filter controls that map onto the existing query-parameter-based filtering model, preserve shareable URLs, keep active filter state visible, and do not change the shared-core filtering semantics.
+The Web timeline exposes visible project, type, and status controls, applies them directly through shareable URLs, defaults the base timeline view to the most recent project while keeping an explicit All projects option, uses a sticky top shell for browsing context and controls, and presents a denser timeline layout without changing shared-core filtering semantics.
 
 ## Provenance
 
-- ad-hoc: User requested a dedicated follow-up work-item after confirming that timeline filtering exists only through URL/query parameters and lacks visible UI controls.
+- ad-hoc: User requested a dedicated follow-up work-item after confirming that timeline filtering existed only through URL/query parameters and lacked visible UI controls.
 
 ## Dependencies
 
@@ -36,10 +36,12 @@ The Web timeline page exposes explicit filter controls that map onto the existin
 
 - Render explicit filter controls on the timeline page for project, document type, and status.
 - Keep the controls synchronized with the existing query-parameter contract instead of introducing a separate client-side filter state.
-- Preserve shareable filtered URLs and browsing continuity into exact document views and back.
-- Support clear or reset behavior from the same UI surface without hiding the current active filter state.
-- Keep unmatched-filter and empty-repository states deterministic after the new controls are added.
+- Auto-apply filter changes from the timeline UI while preserving shareable URLs and browsing continuity into exact document views and back.
+- Default the base timeline route to the most recent project while keeping an explicit all-projects option available from the same control surface.
+- Support clear or reset behavior from the same sticky UI surface and keep unmatched-filter and empty-repository states deterministic after the new controls are added.
+- Keep the sticky header shell, wrapped filter layout, and denser timeline rows usable on both desktop and mobile.
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-28:add-timeline-filter-controls-to-web-ui
+- verification-result:project-memory:2026-03-28:add-timeline-filter-controls-to-web-ui
