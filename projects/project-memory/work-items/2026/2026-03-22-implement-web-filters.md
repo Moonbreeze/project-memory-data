@@ -5,7 +5,7 @@ project: project-memory
 topic: implement-web-filters
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -39,4 +39,5 @@ The Web timeline supports project and document-type filtering through shareable 
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-28:implement-web-filters
+- verification-result:project-memory:2026-03-28:implement-web-filters
