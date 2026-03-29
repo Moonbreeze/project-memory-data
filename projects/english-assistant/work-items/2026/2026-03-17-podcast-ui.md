@@ -1,10 +1,11 @@
 ---
 date: 2026-03-17
+recorded_at: 2026-03-17T00:00:00.000Z
 project: english-assistant
 topic: podcast-ui
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -37,4 +38,5 @@ UI подкаста: форма ввода параметров (тема, кл�
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-03-29:podcast-ui
+- verification-result:english-assistant:2026-03-29:podcast-ui
