@@ -5,7 +5,7 @@ project: project-memory
 topic: implement-search-in-web-ui
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -45,4 +45,5 @@ The Web UI exposes a dedicated `/search` route and results page that wrap the ex
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-29:implement-search-in-web-ui
+- verification-result:project-memory:2026-03-29:implement-search-in-web-ui
