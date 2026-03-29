@@ -11,11 +11,11 @@ work_item_state: open
 
 ## Summary
 
-Author the first routine-pack manifest that matches the user's real project workflow from idea clarification through implementation, verification, review, and follow-up triage.
+Author the first routine-pack manifest that matches the user's real project workflow from idea clarification through implementation, verification, review, and follow-up triage, in a form suitable for later dedicated authoring UX.
 
 ## Outcome
 
-Waypoint has a first concrete routine pack describing the user's habitual delivery flow for new projects and follow-up changes: clarify the idea, shape scope and resources, author or update foundation documentation, plan MVP work items, implement one work item per session, verify or review the slice, and triage follow-up UX or backlog items. The pack becomes the first reusable example of how routine orchestration should feel in practice.
+Waypoint has a first concrete routine pack describing the user's habitual delivery flow for new projects and follow-up changes: clarify the idea, shape scope and resources, author or update foundation documentation, plan MVP work items, implement one work item per session, verify or review the slice, and triage follow-up UX or backlog items. The pack becomes the first reusable example of how routine orchestration should feel in practice and is shaped so it can later be inspected, edited, and validated through the dedicated authoring surface rather than assuming Telegram is the primary configuration environment.
 
 ## Provenance
 
@@ -29,13 +29,15 @@ Waypoint has a first concrete routine pack describing the user's habitual delive
 
 - session-note:waypoint:2026-03-29:routine-pack-architecture-exploration
 - decision:waypoint:2026-03-29:routine-pack-orchestration
+- decision:waypoint:2026-03-29:routine-pack-authoring-surfaces
 
 ## Verification
 
-- The pack defines entrypoints and routines for idea clarification, scope shaping, documentation/backlog preparation, single-work-item execution, verification, review, and follow-up triage.
+- The pack defines entrypoints and routines for idea clarification, scope shaping, documentation or backlog preparation, single-work-item execution, verification, review, and follow-up triage.
 - The pack defines workload classes and pack-level model routing without hardcoding concrete models directly into routine definitions.
 - Routines specify selective ai-inst instruction loadouts rather than blindly loading all project instructions.
 - Durable outputs expected from documentation, verification, or review-related routines are modeled so they can flow into project-memory instead of a parallel documentation store.
+- The pack structure is compatible with the planned dedicated authoring surface for inspection, editing, and validation.
 
 ## Evidence
 
