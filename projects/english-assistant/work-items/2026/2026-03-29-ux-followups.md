@@ -23,7 +23,7 @@ work_item_state: open
 
 ## Dependencies
 
-- none
+- work-item:english-assistant:2026-03-17:docker
 
 ## Context
 
