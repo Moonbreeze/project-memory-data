@@ -5,7 +5,7 @@ project: english-assistant
 topic: deploy-webhook
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ deploy/: webhook-listener (валидация GitHub secret) и testable deploy.
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-03-29:deploy-webhook
+- verification-result:english-assistant:2026-03-29:deploy-webhook-live-smoke
