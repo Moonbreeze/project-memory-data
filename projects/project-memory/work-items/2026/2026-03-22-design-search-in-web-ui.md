@@ -5,17 +5,17 @@ project: project-memory
 topic: design-search-in-web-ui
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
 ## Summary
 
-Define the search UX and contract for the Web UI over existing shared-core search behavior.
+Define the on-demand Web search UX, route contract, and collapsible-control expectations for the read-only Web UI.
 
 ## Outcome
 
-Project-memory has an explicit search design for the Web UI, including query and route semantics, ordering expectations, excerpt behavior, and the boundary between the existing substring-search core and any later UX shaping.
+Project-memory has an explicit search design for the Web UI, including a dedicated `/search` route, the shareable `q`/`project`/`type`/`limit` query contract, latest-first ordering and excerpt expectations inherited from shared core, on-demand entry from the timeline shell, and reusable collapsible-control guidance for compact search and filter surfaces.
 
 ## Provenance
 
@@ -29,16 +29,20 @@ Project-memory has an explicit search design for the Web UI, including query and
 
 - canonical-doc:project-memory:document-model:document-model
 - canonical-doc:project-memory:reads:bounded-read-model
+- canonical-doc:project-memory:web-ui:read-only-web-ui-guidance
 - decision:project-memory:2026-03-17:document-timeline-and-latest-first-query-defaults
+- decision:project-memory:2026-03-29:web-search-route-and-collapsible-control-pattern
 
 ## Verification
 
-- Decide whether Web search initially wraps the current substring-search core unchanged or adds extra shaping on top.
-- Define search ordering semantics and their relation to the latest-first defaults already used elsewhere.
-- Define search-result excerpt behavior and any initial match-highlighting expectations.
-- Define route and query-parameter semantics for shareable search URLs.
+- Decide whether Web search initially wraps the current shared-core substring-search behavior unchanged or adds extra shaping on top.
+- Define search ordering semantics and keep them aligned with the latest-first defaults already used elsewhere.
+- Define search-result excerpt behavior and explicitly defer initial match-highlighting or Web-only ranking semantics.
+- Define route and query-parameter semantics for shareable search URLs, including why v1 does not add a Web-only `status` filter.
+- Define how search stays on-demand from the timeline shell and how the `/search` view uses collapsible controls without permanently expanding the form.
 - Explain why search remains outside the baseline v1 scope even though shared-core search support already exists.
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-03-29:web-search-design-and-web-ui-guidance-audit
+- verification-result:project-memory:2026-03-29:design-search-in-web-ui
