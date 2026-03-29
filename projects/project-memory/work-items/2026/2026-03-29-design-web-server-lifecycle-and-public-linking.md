@@ -5,7 +5,7 @@ project: project-memory
 topic: design-web-server-lifecycle-and-public-linking
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -42,3 +42,5 @@ Project-memory has an explicit design for managing the read-only Web server thro
 ## Evidence
 
 - session-note:project-memory:2026-03-29:web-server-lifecycle-design-discussion
+- session-note:project-memory:2026-03-29:web-server-lifecycle-implementation
+- verification-result:project-memory:2026-03-29:web-server-lifecycle-verification
