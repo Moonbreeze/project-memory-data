@@ -5,7 +5,7 @@ project: english-assistant
 topic: audio-backup
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -40,4 +40,5 @@ work_item_state: open
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-04-05:audio-backup
+- verification-result:english-assistant:2026-04-05:audio-backup
