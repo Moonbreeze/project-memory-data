@@ -5,7 +5,7 @@ project: vpn-reality
 topic: android-split-routing
 source: agent
 status: active
-work_item_state: in_progress
+work_item_state: done
 ---
 # Work Item
 
@@ -41,3 +41,5 @@ Android-клиент ведёт себя симметрично Windows: лок�
 ## Evidence
 
 - session-note:vpn-reality:2026-04-12:android-split-routing-decision-and-docs
+- session-note:vpn-reality:2026-04-12:android-split-routing-live-validation
+- verification-result:vpn-reality:2026-04-12:android-karing-split-routing
