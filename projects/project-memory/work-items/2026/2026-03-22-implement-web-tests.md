@@ -5,7 +5,7 @@ project: project-memory
 topic: implement-web-tests
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -45,4 +45,5 @@ The repository has automated tests for the Web surface that cover route behavior
 
 ## Evidence
 
-- none
+- session-note:project-memory:2026-04-05:separate-runtime-tests-from-safe-suite
+- verification-result:project-memory:2026-04-05:separate-runtime-tests-from-safe-suite
