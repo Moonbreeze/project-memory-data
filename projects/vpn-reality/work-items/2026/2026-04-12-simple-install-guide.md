@@ -5,7 +5,7 @@ project: vpn-reality
 topic: simple-install-guide
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -37,4 +37,4 @@ work_item_state: open
 
 ## Evidence
 
-- none
+- session-note:vpn-reality:2026-04-12:simple-install-guide
