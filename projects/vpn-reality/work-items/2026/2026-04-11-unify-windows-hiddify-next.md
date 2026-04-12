@@ -4,8 +4,8 @@ recorded_at: 2026-04-11T17:10:22.968Z
 project: vpn-reality
 topic: unify-windows-hiddify-next
 source: agent
-status: active
-work_item_state: in_progress
+status: archived
+work_item_state: canceled
 ---
 # Work Item
 
