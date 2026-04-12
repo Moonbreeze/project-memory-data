@@ -5,7 +5,7 @@ project: vpn-reality
 topic: remove-nopasswd-sudo
 source: agent
 status: active
-work_item_state: open
+work_item_state: in_progress
 ---
 # Work Item
 
@@ -37,4 +37,4 @@ sudo снова требует пароль; поверхность атаки �
 
 ## Evidence
 
-- none
+- session-note:vpn-reality:2026-04-12:remove-nopasswd-sudo
