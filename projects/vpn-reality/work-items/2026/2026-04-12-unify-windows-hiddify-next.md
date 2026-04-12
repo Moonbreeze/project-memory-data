@@ -4,8 +4,8 @@ recorded_at: 2026-04-12T09:55:25.291Z
 project: vpn-reality
 topic: unify-windows-hiddify-next
 source: agent
-status: active
-work_item_state: in_progress
+status: archived
+work_item_state: done
 ---
 # Work Item
 
@@ -50,3 +50,5 @@ work_item_state: in_progress
 - session-note:vpn-reality:2026-04-12:unify-windows-research
 - session-note:vpn-reality:2026-04-12:unify-windows-karing-prep
 - session-note:vpn-reality:2026-04-12:unify-windows-telegram-direct-guidance
+- session-note:vpn-reality:2026-04-12:unify-windows-karing-validation
+- verification-result:vpn-reality:2026-04-12:windows-karing-tun-routing

@@ -4,7 +4,7 @@ recorded_at: 2026-04-11T16:18:58.330Z
 project: vpn-reality
 topic: windows-system-proxy-over-tun
 source: agent
-status: active
+status: superseded
 ---
 # Decision
 
