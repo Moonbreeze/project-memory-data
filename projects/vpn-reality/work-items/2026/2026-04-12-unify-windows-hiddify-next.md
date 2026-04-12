@@ -38,7 +38,8 @@ work_item_state: in_progress
 - Выбор клиента: Karing (primary) или v2rayN+TUN (fallback). Валидация Karing: TUN на Windows работает, импорт одиночной vless:// ссылки проходит, remote .srs rule-set подключается.
 - Клиент установлен на Windows, профиль импортирован из файла/clipboard; routing: ru-blocked → proxy, ru/private → direct.
 - TUN mode включён; ya.ru → direct, российский IP; заблокированный домен → через DE-exit.
-- Non-HTTP приложения (Telegram Desktop и др.) корректно ходят через TUN.
+- Хотя бы одно non-browser приложение без собственного proxy-стека корректно ходит через TUN.
+- Если Telegram Desktop использует отдельный MTProto, он исключён из VPN через process-based direct rule и не используется как индикатор корректности TUN.
 - Инструкция для друга ≤4 шага, не требует публичных endpoint'ов кроме VLESS :443.
 - Canonical-doc clients.md обновлён под новый клиент+TUN и файловую доставку профиля.
 - Runbook add-device.md переписан под новый клиентский стек.
@@ -48,3 +49,4 @@ work_item_state: in_progress
 
 - session-note:vpn-reality:2026-04-12:unify-windows-research
 - session-note:vpn-reality:2026-04-12:unify-windows-karing-prep
+- session-note:vpn-reality:2026-04-12:unify-windows-telegram-direct-guidance

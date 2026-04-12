@@ -10,23 +10,26 @@ status: active
 
 ## Purpose
 
-Развернуть VPN-клиент на новом устройстве (Android/Windows) с разделением трафика через blacklist-маршрутизацию.
+Развернуть VPN-клиент на новом устройстве (Android/Windows) с разделением трафика через blacklist-маршрутизацию. На Windows Telegram Desktop при отдельном MTProto исключается из VPN и идёт `direct`.
 
 ## Procedure
 
 - Получить share-ссылку по runbook `add-client`.
 - Android: установить Hiddify-Next из Google Play → Add profile from clipboard → Connect. Split routing пока не настроен, см. work-item `android-split-routing`.
-- Windows: установить v2rayN 7.20.2+ (https://github.com/2dust/v2rayN/releases) в отдельный каталог. Core — встроенный Xray.
-- Windows: Servers → Import bulk URL from clipboard. Выбрать импортированный сервер, Set as active server.
-- Windows: Routing Setting → выбрать preset `V4-黑名单 (Blacklist)` → ОК. Это направляет geoip:cn/ru/private + мультикаст в direct, остальное в proxy.
-- Windows: подложить свежий runetfreedom geosite.dat. Скачать с https://github.com/runetfreedom/russia-v2ray-rules-dat → положить в `%APPDATA%\v2rayN\bin\xray\geosite.dat` (заменить). Теперь в blacklist правилах `geosite:ru-blocked` доступен.
-- Windows: в Rule List правила blacklist → добавить `geosite:ru-blocked` → proxy (ru-blocked — это домены заблокированные в РФ, которые надо гнать через VPN).
-- Windows: System Proxy → Set system proxy (НЕ TUN mode — см. decision `windows-system-proxy-over-tun`).
-- Проверка: `curl ifconfig.me` (проксируется) → IP немецкий; открыть ya.ru → напрямую, IP клиента; открыть заблокированный в РФ сайт → работает через прокси.
+- Windows: установить актуальный `Karing` из https://github.com/KaringX/karing/releases и запускать его `Run as administrator`, иначе `TUN` не поднимется.
+- Windows: `Add Profiles` → импортировать профиль через `Import from Clipboard` или `Import Profile File`. Выбрать импортированный профиль как активный.
+- Windows: `Settings -> Diversion -> Diversion rules -> Edit -> Custom diversion group` → создать группу `ru-blocked`. Внутрь добавить два правила типа `Rule Set`:
+- `https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/sing-box/rule-set-geosite/geosite-ru-blocked.srs`
+- `https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/sing-box/rule-set-geoip/geoip-ru-blocked-community.srs`
+- Windows: вернуться в `Diversion rules` и для группы `ru-blocked` выставить действие `Current Selected`, затем переподключить VPN.
+- Windows: если Telegram Desktop использует отдельный MTProto и не должен идти через VPN, создать группу `telegram-direct` и задать ей действие `Direct`. Внутрь добавить правило `Process name = Telegram.exe`. Если это не матчится, заменить на точный `Process path` к `Telegram.exe`. Оба типа правил в Karing чувствительны к регистру.
+- Windows: проверка маршрутизации идёт не по Telegram, а по обычному non-browser приложению без собственного proxy-стека. Подходит `Steam`, `Spotify`, `Epic Games Launcher` или другой аналогичный клиент.
+- Проверка: `ya.ru` открывается напрямую с российским IP; заблокированный в РФ домен идёт через VPN; выбранное non-browser приложение создаёт трафик в Karing при включённом `TUN`; Telegram Desktop остаётся работоспособным через свой MTProto и не является частью VPN-контура.
 
 ## Verification
 
-- Windows: в v2rayN статусбаре индикатор `System Proxy: On` и выбранный сервер reality-main.
-- IP-чек через браузер на ifconfig.me показывает 147.45.196.137 только для сайтов вне ru/cn.
+- Windows: Karing запущен от администратора, `TUN` активен, импортированный профиль выбран текущим.
 - `ya.ru` и другие российские домены открываются с российским IP клиента.
 - Хотя бы один заблокированный в РФ домен из `ru-blocked` открывается через туннель.
+- Хотя бы одно non-browser приложение без собственного proxy-стека создаёт трафик через `TUN`.
+- Telegram Desktop исключён из VPN через `telegram-direct` и использует отдельный MTProto-контур, если такой контур включён у пользователя.
