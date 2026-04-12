@@ -4,18 +4,18 @@ recorded_at: 2026-04-11T16:25:05.473Z
 project: vpn-reality
 topic: panel-domain-and-le-cert
 source: agent
-status: active
-work_item_state: open
+status: archived
+work_item_state: canceled
 ---
 # Work Item
 
 ## Summary
 
-Привязать домен к 3x-ui панели и выпустить Let's Encrypt сертификат, чтобы перестать полагаться на SSH-туннель.
+Отменён как устаревший по скоупу. Исходная формулировка («привязать домен к 3x-ui панели и выпустить LE») смешивала два независимых use-case: админ-доступ к web UI (закрыт SSH-туннелем, decision ssh-tunnel-over-le валиден) и публичный subscription-endpoint для клиентов. Решение profile-file-over-subscription-url от 2026-04-11 закрыло потребность в публичном endpoint файловой доставкой профиля. Домен не покупается, :80/:8443 остаются закрыты, LE не настраивается. При появлении реального триггера (user-base ≥5 устройств ИЛИ квартальная ротация ключей Reality) создать новый work-item с узким скоупом «TLS только для subscription-server, панель UI остаётся на SSH-туннеле».
 
 ## Outcome
 
-Панель доступна по HTTPS на отдельном поддомене с TLS; SSH-туннель остаётся резервным доступом.
+Work-item закрыт как canceled. Никаких изменений в инфраструктуре не делается. SSH-туннель остаётся единственным способом админить панель. Subscription-server 3x-ui (:2096) остаётся закрытым в ufw. Домен для проекта не регистрируется.
 
 ## Provenance
 
@@ -27,13 +27,13 @@ work_item_state: open
 
 ## Context
 
-- none
+- decision:vpn-reality:2026-04-11:profile-file-over-subscription-url
+- decision:vpn-reality:2026-04-11:ssh-tunnel-over-le
 
 ## Verification
 
-- Домен резолвится в 147.45.196.137.
-- curl https://<panel-domain>/<basePath>/ возвращает 200 с валидным LE-сертификатом.
-- ufw открывает 443 только для панели-поддомена или панель слушает на отдельном порту.
+- Work-item помечен canceled и archived.
+- В decision profile-file-over-subscription-url зафиксированы триггеры для пересоздания.
 
 ## Evidence
 
