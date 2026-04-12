@@ -1,6 +1,6 @@
 ---
-date: 2026-04-11
-recorded_at: 2026-04-11T16:23:38.839Z
+date: 2026-04-12
+recorded_at: 2026-04-12T15:16:00Z
 project: vpn-reality
 topic: add-device
 source: agent
@@ -10,25 +10,30 @@ status: active
 
 ## Purpose
 
-Развернуть VPN-клиент на новом устройстве (Android/Windows) с разделением трафика через blacklist-маршрутизацию. На Windows Telegram Desktop при отдельном MTProto исключается из VPN и идёт `direct`.
+Развернуть VPN-клиент на новом устройстве (Android/Windows) через `Karing + TUN` с relay-first профилем и split routing. На Windows Telegram Desktop при отдельном MTProto исключается из VPN и идёт `direct`.
 
 ## Procedure
 
 - Получить share-ссылку по runbook `add-client`.
-- Android: установить Hiddify-Next из Google Play → Add profile from clipboard → Connect. Split routing пока не настроен, см. work-item `android-split-routing`.
-- Windows: установить актуальный `Karing` из https://github.com/KaringX/karing/releases и запускать его `Run as administrator`, иначе `TUN` не поднимется.
-- Windows: `Add Profiles` → импортировать профиль через `Import from Clipboard` или `Import Profile File`. Выбрать импортированный профиль как активный.
-- Windows: `Settings -> Diversion -> Diversion rules -> Edit -> Custom diversion group` → создать группу `ru-blocked`. Внутрь добавить два правила типа `Rule Set`:
+- Android/Windows: установить актуальный `Karing` из https://github.com/KaringX/karing/releases.
+- Windows: запускать `Karing` через `Run as administrator`, иначе `TUN` не поднимется.
+- Android/Windows: `Add Profiles` → импортировать профиль через `Import from Clipboard` или `Import Profile File`. Выбрать импортированный профиль как активный.
+- Android: при первом подключении подтвердить системное VPN-разрешение для `Karing`.
+- Android/Windows: `Settings -> Diversion` → выставить `Country Or Region` по фактической стране пользователя. Для текущего сценария проекта это `Russia`, чтобы Karing добавил региональные geosite/geoip diversion rules.
+- Android/Windows: в `Diversion rules` оставить включённым `Private network direct connection`.
+- Android/Windows: `Settings -> Diversion -> Diversion rules -> Edit -> Custom diversion group` → создать группу `ru-blocked`. Внутрь добавить два правила типа `Rule Set`:
 - `https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/sing-box/rule-set-geosite/geosite-ru-blocked.srs`
 - `https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/sing-box/rule-set-geoip/geoip-ru-blocked-community.srs`
-- Windows: вернуться в `Diversion rules` и для группы `ru-blocked` выставить действие `Current Selected`, затем переподключить VPN.
+- Android/Windows: вернуться в `Diversion rules` и для группы `ru-blocked` выставить действие `Current Selected`, затем переподключить VPN.
+- Android: базовая проверка — `ya.ru` открывается и показывает российский IP, а домен из `ru-blocked` открывается только через VPN-маршрут.
 - Windows: если Telegram Desktop использует отдельный MTProto и не должен идти через VPN, создать группу `telegram-direct` и задать ей действие `Direct`. Внутрь добавить правило `Process name = Telegram.exe`. Если это не матчится, заменить на точный `Process path` к `Telegram.exe`. Оба типа правил в Karing чувствительны к регистру.
 - Windows: проверка маршрутизации идёт не по Telegram, а по обычному non-browser приложению без собственного proxy-стека. Подходит `Steam`, `Spotify`, `Epic Games Launcher` или другой аналогичный клиент.
 - Проверка: `ya.ru` открывается напрямую с российским IP; заблокированный в РФ домен идёт через VPN; выбранное non-browser приложение создаёт трафик в Karing при включённом `TUN`; Telegram Desktop остаётся работоспособным через свой MTProto и не является частью VPN-контура.
 
 ## Verification
 
-- Windows: Karing запущен от администратора, `TUN` активен, импортированный профиль выбран текущим.
+- Android/Windows: профиль импортирован в `Karing`, `Country Or Region` выставлен по фактической стране, `ru-blocked` группа активна.
+- Windows: Karing запущен от администратора, `TUN` активен.
 - `ya.ru` и другие российские домены открываются с российским IP клиента.
 - Хотя бы один заблокированный в РФ домен из `ru-blocked` открывается через туннель.
 - Хотя бы одно non-browser приложение без собственного proxy-стека создаёт трафик через `TUN`.

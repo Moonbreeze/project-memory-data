@@ -5,21 +5,21 @@ project: vpn-reality
 topic: android-split-routing
 source: agent
 status: active
-work_item_state: open
+work_item_state: in_progress
 ---
 # Work Item
 
 ## Summary
 
-Настроить split routing в Hiddify-Next на Android: ru-домены напрямую, заблокированные в РФ — через тоннель.
+Перевести Android-клиент со схемы Hiddify-only на Karing + TUN и настроить split routing: российские сервисы напрямую, ru-blocked и внешний трафик через туннель.
 
 ## Outcome
 
-Android-клиент ведёт себя симметрично Windows: российские сайты открываются с российского IP, ru-blocked — через DE-exit.
+Android-клиент ведёт себя симметрично Windows: локально доступные российские сервисы открываются с российского IP, а ru-blocked и внешний трафик идут через DE-exit по relay-first профилю.
 
 ## Provenance
 
-- ad-hoc: Сейчас на Android весь трафик идёт через тоннель → ru-сайты ломаются при включённом VPN.
+- ad-hoc: Сейчас на Android весь трафик идёт через тоннель, из-за чего локально доступные российские сайты ломаются при включённом VPN.
 
 ## Dependencies
 
@@ -27,14 +27,17 @@ Android-клиент ведёт себя симметрично Windows: рос�
 
 ## Context
 
-- none
+- decision:vpn-reality:2026-04-12:android-karing-over-hiddify-for-split-routing
+- canonical-doc:vpn-reality:client-setup:clients
 
 ## Verification
 
+- Karing на Android установлен, relay-first профиль импортирован через clipboard/file, системное VPN-разрешение выдано.
+- В Karing выставлен корректный `Country Or Region`, включён `Private network direct connection`, группа `ru-blocked` активна с remote runetfreedom .srs rule-set'ами.
 - ya.ru на Android с включённым VPN открывается и показывает российский IP.
-- Заблокированный в РФ домен открывается через тоннель.
-- Hiddify Routing содержит правила direct для geosite:geolocation-cn/ru и proxy для ru-blocked (или sing-box эквивалентов).
+- Заблокированный в РФ домен открывается через туннель.
+- После живой проверки записан отдельный verification-result по Android routing.
 
 ## Evidence
 
-- none
+- session-note:vpn-reality:2026-04-12:android-split-routing-decision-and-docs
