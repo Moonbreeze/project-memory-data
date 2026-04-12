@@ -1,6 +1,6 @@
 ---
-date: 2026-04-11
-recorded_at: 2026-04-11T16:16:15.267Z
+date: 2026-04-12
+recorded_at: 2026-04-12T15:03:13.030Z
 project: vpn-reality
 topic: security-model
 registry_scope: security
@@ -11,20 +11,23 @@ status: active
 
 ## Summary
 
-Модель угроз и применённые митигации: Reality для маскировки, SSH-туннель вместо TLS для панели, geoip:ru blackhole как защита от CVE клиентского SOCKS5.
+Модель угроз и применённые митигации теперь включают активный relay-слой в Yandex Cloud: клиентский первый хоп остаётся российским, а финальный выход идёт через DE-exit. Базовые митигации Reality, SSH-only panel access и geoip:ru blackhole на exit сохраняются.
 
 ## Guidance
 
-- Модель угроз: (a) DPI на уровне российского провайдера и ТСПУ, (b) активный probing выходных IP для занесения в список блокируемых, (c) фингерпринтинг через CVE-уязвимости локального SOCKS5 в мобильных VLESS-клиентах (habr 1020080). Не в модели: целенаправленные атаки на личность, APT, рут-компрометация VPS.
-- Транспорт: VLESS+Reality с SNI-маской `www.microsoft.com` и flow `xtls-rprx-vision`. Для active probing выглядит как прямое HTTPS-подключение к microsoft.com — при попытке валидации TLS fallback на `www.microsoft.com:443` даёт валидный MS-сертификат.
-- Доступ к панели 3x-ui: только SSH local port forward с `127.0.0.1:29486` на локальную машину. Public port 29486 в ufw закрыт. Причина: выбран путь без домена → Let's Encrypt не выписать → панель на plain HTTP. HTTP наружу неприемлем, значит не наружу.
-- Серверное правило `geoip:ru → blocked` в Xray routing. Цель — нейтрализовать вектор фингерпринтинга: если клиентский SOCKS5 скомпрометирован и кто-то пустит обратный трафик к ру-сервису через VPS — выходной IP в логах ру-сервиса не появится, корреляция невозможна.
-- Клиентские CVE-митигации: Windows использует v2rayN с System Proxy (xray-core, не sing-box) и blacklist routing — канала `tun2socks → local SOCKS5` нет вообще. Android невозможно полностью защитить на уровне клиента (все мобильные VLESS-клиенты уязвимы), защита строится только на сервере.
-- Сознательно не в скоупе: Cloudflare WARP как outbound-цепь (стратегическая митигация из статьи), релей через Yandex Cloud (Layer 2 из оригинальной статьи), настоящая TLS-защита панели через LE+домен. Все вынесены в backlog, не блокируют текущий сетап.
-- Fail2ban в 3x-ui активен по дефолту (`x-ui banlog` для просмотра). SSH порт нестандартный (51218), что срезает шум scan-атак. Pubkey-only auth закрывает оставшиеся векторы brute-force.
+- Модель угроз не меняется по составу: (a) DPI/ТСПУ на российском провайдере, (b) активный probing выходных IP, (c) фингерпринтинг через уязвимости локального SOCKS5 в мобильных VLESS-клиентах. Новый relay-слой уменьшает заметность прямого первого хопа в зарубежный хостинг, но не отменяет остальные митигации.
+- Публичный клиентский вход теперь находится на RU-relay в Yandex Cloud (`178.154.193.39:443`) и маскируется через `VLESS + Reality` с `www.microsoft.com` / `chrome`, как и раньше. Для клиента первый сетевой контакт остаётся с российским IP, а не с немецким хостером.
+- DE VPS больше не принимает пользовательский трафик как primary public endpoint. На нём открыт отдельный backhaul inbound `8443/tcp`, доступный только с IPv4 relay `178.154.193.39`. Это сужает поверхность атаки: probing 8443 из интернета не должен доходить до Xray.
+- Серверное правило `geoip:ru -> blocked` на DE-exit остаётся обязательным. Relay не заменяет эту защиту: если клиентский SOCKS5-компонент скомпрометирован, корреляционный трафик к ру-сервисам всё равно не должен выходить с DE IP.
+- Панель 3x-ui на DE по-прежнему доступна только через SSH local port forward. Relay-миграция не создаёт нового публичного admin endpoint и не требует открытия 29486/tcp.
+- На Yandex relay порт `443/tcp` должен быть выделен только под Xray Reality inbound. Совмещение с MTProto или другим сервисом на том же `IP:443` не поддерживается в рабочем профиле проекта; сервис нужно переносить на другой порт/IP до ввода relay в прод.
+- Проверка маршрута должна опираться на `api4.ipify.org` и `api64.ipify.org`; `ifconfig.me` может возвращать IPv6 observed address даже при IPv4-запросе и не подходит как надёжный security/operations oracle.
 
 ## References
 
+- runbook:vpn-reality:yandex-relay-setup
+- provider-note:vpn-reality:yandex-cloud
+- verification-result:vpn-reality:2026-04-12:stage3-yandex-cloud-relay
 - decision:vpn-reality:security:geoip-ru-blackhole
 - decision:vpn-reality:operations:ssh-tunnel-over-le
 - https://habr.com/ru/articles/1020080/

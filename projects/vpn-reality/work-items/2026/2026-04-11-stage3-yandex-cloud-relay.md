@@ -5,7 +5,7 @@ project: vpn-reality
 topic: stage3-yandex-cloud-relay
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -37,4 +37,5 @@ work_item_state: open
 
 ## Evidence
 
-- none
+- session-note:vpn-reality:2026-04-12:stage3-yandex-cloud-relay
+- verification-result:vpn-reality:2026-04-12:stage3-yandex-cloud-relay

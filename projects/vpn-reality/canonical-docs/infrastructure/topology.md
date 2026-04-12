@@ -1,6 +1,6 @@
 ---
-date: 2026-04-11
-recorded_at: 2026-04-11T16:09:01.612Z
+date: 2026-04-12
+recorded_at: 2026-04-12T15:02:59.054Z
 project: vpn-reality
 topic: topology
 registry_scope: infrastructure
@@ -11,25 +11,22 @@ status: active
 
 ## Summary
 
-Топология текущей инсталляции VPN: один зарубежный VPS с 3x-ui/Xray, VLESS Reality + Vision flow на :443, два клиента. Share-ссылки генерируются с публичным IP благодаря External Proxy override на inbound.
+Текущая топология VPN: публичный клиентский вход теперь на RU-relay в Yandex Cloud, а DE VPS выступает только backhaul/exit-узлом. Клиенты подключаются к Yandex IP по VLESS Reality на 443, relay уводит трафик на DE inbound на 8443, а финальный внешний IP остаётся немецким по IPv4 и IPv6.
 
 ## Guidance
 
-- Зарубежный VPS: `vm1184299.cloud.nuxt.network`, внешний IPv4 `147.45.196.137`, IPv6 `2a0f:cdc6:500:758::2`. Дата-центр заявлен в Германии. Хостер — Aeza (или дочерний бренд). BBR + fq уже в дефолте ядра Ubuntu 22.04.
-- OS: Ubuntu 22.04.5 LTS. Пользователь `moonbreeze` в группах sudo+docker. SSH на нестандартном порту `51218`, только pubkey (password auth disabled). В `~/.ssh/authorized_keys` два ключа: `moonbreeze@HUMGATE` (основной рабочий ноут) и `moonbreeze@moonbreeze-o`.
-- ufw rules: allow 51218/tcp (SSH), 443/tcp 8443/tcp 2053/tcp (VLESS Reality слоты). Порты 8443 и 2053 зарезервированы, но сейчас не используются — только 443 активен. 80/tcp закрыт намеренно (нет домена → нет Let's Encrypt).
-- 3x-ui панель: порт `29486`, WebBasePath `/CBBrgsrNZfY43jtrAY/`, слушает на всех интерфейсах. Порт 29486 в ufw закрыт — доступ только через SSH-туннель. Subscription server 3x-ui на порту `2096` (не используется, см. decision profile-file-over-subscription-url). Xray core: 26.2.6. 3x-ui: 2.8.11.
-- Inbound `reality-main` на порту 443: VLESS + Reality + TCP + xtls-rprx-vision flow. SNI-маска: `www.microsoft.com` (fallback `microsoft.com:443`). Fingerprint: `chrome`. Reality public key: `9hE2DLpR6caqCS8FRZ9N4n2fsPTXcDuhVsuvXoGyAw8`. Short IDs пул из 8 штук, в share-ссылках используется `444a941e4b8f`. SpiderX: `/`.
-- В inbound `reality-main` настроен External Proxy entry с `Forced Expose IP = 147.45.196.137`, `Port = 443`, `Remark = public-ipv4`. Это заставляет 3x-ui подставлять публичный IP в генерируемые `vless://` ссылки независимо от того, через какой URL открыта панель (включая 127.0.0.1 через SSH-туннель). Ручная замена хоста в экспортируемых ссылках больше не требуется. Side-effect: к remark клиента в ssh-fragment'е ссылки подклеивается суффикс `-public-ipv4` (косметика).
-- Клиенты в inbound: `phone-android` (UUID `4f26c1dc-2b1d-456f-95d7-57dea285c246`) и `desktop-windows` (UUID `1d27dd21-0bda-417b-a43f-c77aca64ca3a`). Оба с flow `xtls-rprx-vision`. Каждое устройство имеет свой UUID для независимой статистики и отзыва.
-- Xray routing rules активные: `geoip:private → blocked`, `geoip:ru → blocked`, `protocol:bittorrent → blocked`. Правило `geoip:ru → blocked` — митигация уязвимости клиентского SOCKS5 (см. decision security/geoip-ru-blackhole). Outbounds: `direct` (freedom) и `blocked` (blackhole).
+- RU-relay: Yandex Cloud VPS с публичным IPv4 `178.154.193.39`. На relay поднят standalone `xray`, публичный inbound `relay-public` слушает `0.0.0.0:443`, протокол `VLESS`, transport `TCP`, security `Reality`, flow `xtls-rprx-vision`.
+- Клиентский endpoint проекта теперь `178.154.193.39:443`. Share-ссылки для устройств должны указывать именно Yandex IP, а не DE-exit. Актуальные Reality client params для relay: `sni=www.microsoft.com`, `fp=chrome`, `pbk=zF486Nys3ZwxCtLW83cmwsXWvugaeP3cYk4rcYP9sgw`, `sid=d155a5e6a588d95b`, `spx=%2F`, `flow=xtls-rprx-vision`.
+- DE-exit остаётся хостом `147.45.196.137` / `2a0f:cdc6:500:758::2` и теперь выполняет только роль backhaul/exit. На нём добавлен отдельный inbound `relay-backhaul` на `8443/tcp` с `VLESS + Reality + Vision`; relay подключается только к нему.
+- Firewall boundary на DE: `8443/tcp` разрешён только с IP relay `178.154.193.39`. Общий allow `8443/tcp Anywhere` удалён. Если IPv6 backhaul не используется, публичный `8443/tcp (v6)` держать закрытым.
+- Старый прямой inbound `reality-main` на DE больше не является primary client path. При полной миграции клиентов его можно выключить; operational truth проекта теперь строится вокруг relay-first схемы `client -> Yandex -> DE -> internet`.
+- Проверка топологии должна использовать raw IP echo endpoints, а не `ifconfig.me` главной страницей: `curl -4 https://api4.ipify.org` должен возвращать `147.45.196.137`, а `curl https://api64.ipify.org` — IPv6 DE-exit. `ifconfig.me` может путать IPv4/IPv6 observed address и не годится как единственный oracle.
+- Порт `443/tcp` на Yandex relay был освобождён под Reality; если на той же VM крутится MTProto или другой сервис, его нужно переносить на отдельный порт или отдельный IP до включения relay.
 
 ## References
 
-- runbook:vpn-reality:operations:panel-access
-- runbook:vpn-reality:clients:add-client
+- runbook:vpn-reality:yandex-relay-setup
+- provider-note:vpn-reality:yandex-cloud
+- verification-result:vpn-reality:2026-04-12:stage3-yandex-cloud-relay
 - decision:vpn-reality:security:geoip-ru-blackhole
-- decision:vpn-reality:operations:ssh-tunnel-over-le
-- decision:vpn-reality:2026-04-11:profile-file-over-subscription-url
-- verification-result:vpn-reality:2026-04-11:panel-external-proxy-public-ip
 - https://habr.com/ru/articles/1021160/
