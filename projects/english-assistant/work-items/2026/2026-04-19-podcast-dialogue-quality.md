@@ -5,7 +5,7 @@ project: english-assistant
 topic: podcast-dialogue-quality
 source: user
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -40,4 +40,5 @@ work_item_state: open
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-04-19:podcast-dialogue-quality
+- verification-result:english-assistant:2026-04-19:podcast-dialogue-quality
