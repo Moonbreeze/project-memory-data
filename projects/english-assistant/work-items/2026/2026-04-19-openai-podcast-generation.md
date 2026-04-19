@@ -5,7 +5,7 @@ project: english-assistant
 topic: openai-podcast-generation
 source: user
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -37,4 +37,5 @@ Backend генерирует сценарий подкаста через реа
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-04-19:openai-podcast-integration
+- verification-result:english-assistant:2026-04-19:openai-podcast-production-smoke
