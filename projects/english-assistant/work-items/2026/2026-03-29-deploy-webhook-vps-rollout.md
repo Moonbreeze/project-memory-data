@@ -5,7 +5,7 @@ project: english-assistant
 topic: deploy-webhook-vps-rollout
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -31,11 +31,12 @@ work_item_state: open
 
 ## Verification
 
-- Listener установлен и запускается на VPS через systemd с корректным environment file
-- GitHub webhook настроен на публичный endpoint VPS и реальный signed push event достигает listener
-- Deploy flow на VPS выполняет backup + update + docker compose rebuild на целевом хосте
-- После reboot VPS listener автоматически поднимается и продолжает принимать webhook-запросы
+- Listener установлен и запускается на VPS через systemd с корректным environment file.
+- GitHub webhook настроен на публичный endpoint VPS и реальный signed push event достигает listener.
+- Deploy flow на VPS выполняет backup + update + docker compose rebuild на целевом хосте.
+- После reboot VPS listener автоматически поднимается и продолжает принимать webhook-запросы.
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-04-19:deploy-webhook-vps-rollout
+- verification-result:english-assistant:2026-04-19:deploy-webhook-vps-rollout
