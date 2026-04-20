@@ -16,7 +16,9 @@ Active taxonomy registry for the agent-context project.
 ## Guidance
 
 - registry-entry: scope=bootstrap-runbooks; topic=bootstrap-runbooks; state=active; migration=none; aliases=runbooks; mapped-scopes=none
+- registry-entry: scope=context-curator; topic=context-curator-model; state=active; migration=none; aliases=curation,curator; mapped-scopes=none
 - registry-entry: scope=documentation-model; topic=documentation-model; state=active; migration=none; aliases=doc-model,docs-model; mapped-scopes=none
+- registry-entry: scope=platform-neutral; topic=platform-neutral-curation; state=active; migration=none; aliases=multi-platform,portable; mapped-scopes=none
 - registry-entry: scope=project-overview; topic=agent-context-overview; state=active; migration=none; aliases=overview; mapped-scopes=none
 - registry-entry: scope=task-routing; topic=task-routing; state=active; migration=none; aliases=change-routing,routing; mapped-scopes=none
 - registry-entry: scope=taxonomy-registry; topic=taxonomy-registry; state=active; migration=none; aliases=none; mapped-scopes=none
@@ -28,3 +30,5 @@ Active taxonomy registry for the agent-context project.
 - canonical-doc:agent-context:2026-04-20:documentation-model
 - canonical-doc:agent-context:2026-04-20:task-routing
 - canonical-doc:agent-context:2026-04-20:trial-mode
+- canonical-doc:agent-context:2026-04-20:context-curator-model
+- canonical-doc:agent-context:2026-04-20:platform-neutral-curation
