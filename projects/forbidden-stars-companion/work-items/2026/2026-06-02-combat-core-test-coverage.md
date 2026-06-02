@@ -5,7 +5,7 @@ project: forbidden-stars-companion
 topic: combat-core-test-coverage
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -41,4 +41,5 @@ work_item_state: open
 
 ## Evidence
 
-- none
+- session-note:forbidden-stars-companion:2026-06-02:combat-core-test-coverage
+- verification-result:forbidden-stars-companion:2026-06-02:combat-core-test-coverage
