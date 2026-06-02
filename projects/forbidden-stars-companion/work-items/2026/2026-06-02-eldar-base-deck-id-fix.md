@@ -5,7 +5,7 @@ project: forbidden-stars-companion
 topic: eldar-base-deck-id-fix
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -39,4 +39,5 @@ work_item_state: open
 
 ## Evidence
 
-- none
+- session-note:forbidden-stars-companion:2026-06-02:eldar-base-deck-id-fix
+- verification-result:forbidden-stars-companion:2026-06-02:eldar-base-deck-id-fix
