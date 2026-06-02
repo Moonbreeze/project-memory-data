@@ -5,7 +5,7 @@ project: english-assistant
 topic: landing-runtime-architecture
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -37,4 +37,5 @@ work_item_state: open
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-06-02:landing-runtime-architecture
+- verification-result:english-assistant:2026-06-02:landing-runtime-architecture
