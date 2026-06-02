@@ -5,7 +5,7 @@ project: forbidden-stars-companion
 topic: combat-setup-validation
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -40,4 +40,5 @@ Setup блокирует или явно маркирует невалидные
 
 ## Evidence
 
-- none
+- session-note:forbidden-stars-companion:2026-06-02:combat-setup-validation-implementation
+- verification-result:forbidden-stars-companion:2026-06-02:combat-setup-validation
