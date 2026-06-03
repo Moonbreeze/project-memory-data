@@ -5,21 +5,21 @@ project: english-assistant
 topic: production-domain-routing-and-smoke
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
 ## Summary
 
-Настроить production domain routing для лендинга и приложения и проверить end-to-end работу после deploy.
+Finalize the repo-side production domain routing contract for the landing/app split and validate it locally before the external VPS rollout.
 
 ## Outcome
 
-Root-domain в production отдаёт лендинг, assistant subdomain продолжает отдавать приложение, а обе поверхности обновляются через общий push-triggered deploy.
+The repository contains a versioned reverse proxy config, a testable hostname routing contract, and a local smoke runner that validates root-domain landing, `www` canonical redirect, and `assistant` app routing.
 
 ## Provenance
 
-- ad-hoc: Подключение production root-domain к лендингу при сохранении assistant subdomain за приложением.
+- ad-hoc: Split the landing and app public hostnames so the repository contains the production routing contract and local verification before the VPS rollout.
 
 ## Dependencies
 
@@ -31,12 +31,10 @@ Root-domain в production отдаёт лендинг, assistant subdomain пр�
 
 ## Verification
 
-- <root-domain> открывает лендинг.
-- www.<root-domain> открывает лендинг или делает корректный redirect на канонический host.
-- assistant.<root-domain> открывает текущее приложение.
-- CTA с лендинга ведёт в приложение.
-- После тестового push обновления доходят до обеих поверхностей.
+- `pnpm test` stays green after the routing and landing host-resolution changes.
+- `pnpm smoke:reverse-proxy` confirms root-domain -> landing, `www` -> canonical redirect, and `assistant.<root-domain>` -> app in the local contract harness.
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-06-03:production-domain-routing-and-smoke
+- verification-result:english-assistant:2026-06-03:production-domain-routing-and-smoke
