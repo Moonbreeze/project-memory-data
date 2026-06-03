@@ -5,7 +5,7 @@ project: english-assistant
 topic: landing-package-scaffold-and-shell
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ work_item_state: open
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-06-03:landing-package-scaffold-and-shell
+- verification-result:english-assistant:2026-06-03:landing-package-scaffold-and-shell
