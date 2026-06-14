@@ -5,7 +5,7 @@ project: english-assistant
 topic: production-reverse-proxy-rollout-and-domain-smoke
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -38,4 +38,5 @@ The live production setup serves the landing from the root-domain, redirects `ww
 
 ## Evidence
 
-- none
+- session-note:english-assistant:2026-06-14:production-reverse-proxy-rollout-and-domain-smoke
+- verification-result:english-assistant:2026-06-14:production-reverse-proxy-rollout-and-domain-smoke
