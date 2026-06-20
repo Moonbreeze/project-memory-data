@@ -5,7 +5,7 @@ project: agent-context
 topic: scaffold-agent-context-structure
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -39,4 +39,5 @@ The project contains the base document files and directories needed to start the
 
 ## Evidence
 
-- none
+- session-note:agent-context:2026-06-20:scaffold-agent-context-structure
+- verification-result:agent-context:2026-06-20:scaffold-agent-context-structure
