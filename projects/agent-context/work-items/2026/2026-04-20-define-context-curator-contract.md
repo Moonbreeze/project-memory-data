@@ -5,7 +5,7 @@ project: agent-context
 topic: define-context-curator-contract
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -39,4 +39,5 @@ Context-curator is specified without coupling the model to a single vendor workf
 
 ## Evidence
 
-- none
+- session-note:agent-context:2026-06-21:define-context-curator-contract
+- verification-result:agent-context:2026-06-21:define-context-curator-contract
