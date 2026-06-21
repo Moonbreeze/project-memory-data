@@ -42,6 +42,7 @@ The team has evidence about whether bounded project-memory reads plus shared har
 - Run three to five real task trials.
 - For each task, determine whether cold-start context plus one planning or topic package and at most one reusable pattern were sufficient.
 - Record the gaps that still force broad repository scanning or require harness-behavior updates.
+- Each pilot records whether startup succeeded without target-repo harness artifacts.
 
 ## Evidence
 

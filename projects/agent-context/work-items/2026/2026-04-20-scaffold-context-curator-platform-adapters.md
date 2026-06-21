@@ -5,7 +5,7 @@ project: agent-context
 topic: scaffold-context-curator-platform-adapters
 source: agent
 status: active
-work_item_state: open
+work_item_state: canceled
 ---
 # Work Item
 

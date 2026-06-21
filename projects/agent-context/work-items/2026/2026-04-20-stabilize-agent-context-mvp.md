@@ -38,6 +38,7 @@ Only the materials that materially improve behavior authoring, delivery into ai-
 - Unused or low-value authoring materials are removed or simplified.
 - The most useful behavior patterns, instructions, or integration points are refined.
 - A minimal stable set is identified for continued development.
+- Remove or reject delivery mechanisms that depend on target-repo harness-sidecar artifacts.
 
 ## Evidence
 

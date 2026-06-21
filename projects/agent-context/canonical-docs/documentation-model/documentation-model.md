@@ -21,6 +21,9 @@ The documentation model separates authoring documents in agent-context, runtime 
 - Repository-local Markdown in agent-context should not be treated as the primary canonical knowledge layer for unrelated projects.
 - Documents should stay explicit about which layer they belong to: authoring repo, behavior layer, or project-memory data layer.
 - Current truth, durable rationale, repeatable procedure, and execution history should remain separated in project-memory rather than collapsed into generic sidecar prose.
+- Target repositories should not become a durable storage surface for harness-specific artifacts by default.
+- Harness behavior should be delivered through behavior-layer tooling such as ai-inst/opencode rather than through repo-local scaffold files in target repositories.
+- Temporary runtime artifacts needed only during execution should stay outside the target repository or be removed instead of becoming a durable knowledge layer.
 
 ## References
 
@@ -28,3 +31,4 @@ The documentation model separates authoring documents in agent-context, runtime 
 - canonical-doc:agent-context:2026-06-21:task-routing
 - canonical-doc:agent-context:2026-06-21:trial-mode
 - decision:agent-context:2026-06-21:authoring-repo-project-memory-split
+- decision:agent-context:2026-06-21:no-target-repo-harness-traces

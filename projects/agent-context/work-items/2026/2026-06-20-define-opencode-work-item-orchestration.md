@@ -38,6 +38,7 @@ An explicit orchestration policy exists for fresh work-item startup, bounded rea
 - Define the allowed override cases for continuing in the same context.
 - Define the handoff contract between a completed work-item and the next work-item.
 - Ensure the policy can connect to future platform adapters without hard-coding one vendor workflow.
+- Startup does not require creating repo-local harness files in the target repository.
 
 ## Evidence
 

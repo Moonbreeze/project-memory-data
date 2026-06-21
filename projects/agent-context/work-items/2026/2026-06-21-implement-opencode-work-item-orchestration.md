@@ -39,6 +39,7 @@ Opencode can start a new work-item from bounded project-memory reads by default,
 - Define the explicit override path for continuing in the same context.
 - Define the handoff payload passed from a completed work-item to the next one.
 - Ensure the implementation surface stays adapter-friendly and does not hard-code one vendor-specific orchestration model beyond opencode runtime integration.
+- Runtime implementation does not introduce repo-local harness prompts, bootstrap files, or metadata into target repositories by default.
 
 ## Evidence
 
