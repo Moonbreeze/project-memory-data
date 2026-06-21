@@ -5,7 +5,7 @@ project: agent-context
 topic: write-system-map
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -39,4 +39,5 @@ Contributors can distinguish the authoring repo, generated behavior artifacts, a
 
 ## Evidence
 
-- none
+- session-note:agent-context:2026-06-21:write-system-map
+- verification-result:agent-context:2026-06-21:write-system-map
