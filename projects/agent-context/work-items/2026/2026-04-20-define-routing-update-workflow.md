@@ -11,15 +11,15 @@ work_item_state: open
 
 ## Summary
 
-Define how routing documents are updated after real tasks reveal new stable navigation paths.
+Define how real-task findings update project-memory versus reusable authoring materials after new stable routes are discovered.
 
 ## Outcome
 
-New stable routes are fed back into ENTRYPOINTS and RECIPES without introducing backlog or session-log layers.
+Project-specific truth and generic behavior patterns feed back into the correct layer without mixing runtime memory records with authoring repo documents.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, now reframed around the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -28,14 +28,15 @@ New stable routes are fed back into ENTRYPOINTS and RECIPES without introducing 
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:task-routing
-- canonical-doc:agent-context:2026-04-20:documentation-model
+- canonical-doc:agent-context:2026-06-21:task-routing
+- canonical-doc:agent-context:2026-06-21:documentation-model
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
-- The workflow states when ENTRYPOINTS.md should be updated.
-- The workflow states when RECIPES should be created or edited.
-- The process does not require backlog or session-note tracking inside agent-context.
+- The workflow states when project-memory routing or current-truth records should be updated.
+- The workflow states when reusable authoring recipes, templates, or modules should be created or edited in agent-context.
+- The process keeps project-specific truth separate from generic behavior patterns.
 
 ## Evidence
 

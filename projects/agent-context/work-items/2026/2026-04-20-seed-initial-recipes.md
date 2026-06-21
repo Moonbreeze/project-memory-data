@@ -11,15 +11,15 @@ work_item_state: open
 
 ## Summary
 
-Create the initial recipe template and a small seed set of change-oriented recipes.
+Create the initial reusable authoring recipes and templates for common change patterns that can later be extracted into ai-inst modules or skills.
 
 ## Outcome
 
-Reusable recipes cover common frontend change patterns with focused start points and verification reminders.
+Reusable behavior patterns cover common task startup shapes with focused first reads and verification reminders without becoming project-specific canonical storage.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, now reframed around the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -28,14 +28,16 @@ Reusable recipes cover common frontend change patterns with focused start points
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:task-routing
-- canonical-doc:agent-context:2026-04-20:documentation-model
+- canonical-doc:agent-context:2026-06-21:task-routing
+- canonical-doc:agent-context:2026-06-21:documentation-model
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
-- RECIPES/_template.md exists.
-- Two or three initial recipes are added.
-- Each recipe contains Start here, Usually also inspect, Do not forget, and Verify with sections.
+- A reusable recipe or pattern template exists for authoring new task routes.
+- Two or three initial generic patterns are added.
+- Each pattern contains Start here, Usually also inspect, Do not forget, and Verify with sections or equivalent.
+- The patterns stay generic and reusable rather than becoming project-specific truth for one repository.
 
 ## Evidence
 

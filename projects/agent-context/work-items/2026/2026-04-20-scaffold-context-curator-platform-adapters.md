@@ -11,15 +11,15 @@ work_item_state: open
 
 ## Summary
 
-Add templates or scripts to scaffold platform-specific adapter skeletons for context-curator.
+Add templates or scripts to scaffold platform-specific adapters that implement the context-curator contract over bounded project-memory context.
 
 ## Outcome
 
-New Claude, Codex, and Cursor adapters can be created consistently on top of the shared curation contract.
+New Claude, Codex, and Cursor adapters can be created consistently on top of the shared curator contract and project-memory-backed inputs.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, now reframed around the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -27,15 +27,15 @@ New Claude, Codex, and Cursor adapters can be created consistently on top of the
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:context-curator-model
-- canonical-doc:agent-context:2026-04-20:platform-neutral-curation
-- decision:agent-context:2026-04-20:context-curator-platform-neutral
+- canonical-doc:agent-context:2026-06-21:context-curator-model
+- canonical-doc:agent-context:2026-06-21:platform-neutral-curation
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
 - The scaffold creates skeletons for at least Claude, Codex, and Cursor.
 - The shared contract is not duplicated manually across platform adapters.
-- Platform-specific files stay separated from the canonical model.
+- Platform-specific files expect bounded project context inputs rather than repo-local sidecar assumptions.
 - The generated output includes a short list of remaining manual steps.
 
 ## Evidence

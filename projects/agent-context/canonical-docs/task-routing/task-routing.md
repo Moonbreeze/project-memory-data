@@ -1,6 +1,6 @@
 ---
-date: 2026-04-20
-recorded_at: 2026-04-20T12:57:44.484Z
+date: 2026-06-21
+recorded_at: 2026-06-21T12:01:42.841Z
 project: agent-context
 topic: task-routing
 registry_scope: task-routing
@@ -11,19 +11,19 @@ status: active
 
 ## Summary
 
-Task routing is the primary mechanism for the common scenario where an agent needs to know where to start and which files to inspect for a concrete change.
+Task routing is a runtime harness behavior that selects the next bounded project-memory read and the first code paths to inspect for a concrete change.
 
 ## Guidance
 
-- A stable architecture map is not enough for common change requests; the project also needs a routing layer that answers where to start for a task type.
-- The routing layer should be expressed in task terms such as change type, start here, usually also inspect, pitfalls, and verify with.
-- Useful routing artifacts include ENTRYPOINTS indexes, change recipes, hotspot notes, and file-pattern guidance.
-- The preferred startup flow is to read the start document, open one routing document, and inspect only the cited code paths before widening the search.
-- This routing layer should be optimized for the scenario 'make this change and start from these files'.
+- A stable architecture map alone is not enough; the harness also needs a routing layer that decides which bounded project-memory entrypoint to read next for a given task.
+- Reusable routing patterns may be authored in agent-context, but project-specific routes and current truth should live in project-memory.
+- The preferred startup flow for a target repository is to read cold-start context, open one relevant planning or topic package, and inspect only the cited code paths before widening the search.
+- Useful routing outputs stay task-oriented: what to read first, what to inspect next, what pitfalls to avoid, and what to verify after the change.
+- Repo-local ENTRYPOINTS or recipes in agent-context should be treated as authoring patterns or extraction sources, not as universal runtime storage for all projects.
 
 ## References
 
-- canonical-doc:agent-context:2026-04-20:agent-context-overview
-- canonical-doc:agent-context:2026-04-20:documentation-model
-- runbook:agent-context:2026-04-20:bootstrap-task-context
-- decision:agent-context:2026-04-20:agent-context-sidecar-trial
+- canonical-doc:agent-context:2026-06-21:agent-context-overview
+- canonical-doc:agent-context:2026-06-21:documentation-model
+- runbook:agent-context:2026-06-21:bootstrap-task-context
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split

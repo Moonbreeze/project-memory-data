@@ -11,15 +11,15 @@ work_item_state: open
 
 ## Summary
 
-Create a task-routing index for the common scenario of making a change and starting from known files.
+Define the routing entry model the harness uses to choose the next bounded project-memory read for a concrete task.
 
 ## Outcome
 
-ENTRYPOINTS.md provides task-oriented starting points, adjacent inspection targets, pitfalls, and verification hints.
+A reusable routing pattern exists for modules, skills, and project-memory-backed task startup instead of relying on repo-local ENTRYPOINTS files.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, now reframed around the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -28,14 +28,15 @@ ENTRYPOINTS.md provides task-oriented starting points, adjacent inspection targe
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:task-routing
-- canonical-doc:agent-context:2026-04-20:documentation-model
+- canonical-doc:agent-context:2026-06-21:task-routing
+- canonical-doc:agent-context:2026-06-21:documentation-model
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
-- ENTRYPOINTS.md uses the format change type / start here / also inspect / pitfalls / verify.
-- The index includes at least five initial change types.
-- Entries point to real paths or explicit placeholders.
+- Define a routing format that includes task type or intent, where to start, what to inspect next, pitfalls, and how to verify.
+- The routing model can be consumed by behavior artifacts such as modules or skills rather than only by one repository-local Markdown index.
+- Entries point to bounded memory reads, repository paths, or explicit placeholders when the route is not yet concrete.
 
 ## Evidence
 

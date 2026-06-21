@@ -11,15 +11,15 @@ work_item_state: open
 
 ## Summary
 
-Trim unused material and stabilize the minimal working set after the initial pilot.
+Trim unused material and stabilize the minimal authoring, build, and runtime integration set after the initial pilot.
 
 ## Outcome
 
-Only the documentation that materially reduces startup context cost remains in the MVP.
+Only the materials that materially improve behavior authoring, delivery into ai-inst/opencode, or project-memory-backed startup remain in the MVP.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, now reframed around the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -28,14 +28,15 @@ Only the documentation that materially reduces startup context cost remains in t
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:agent-context-overview
-- canonical-doc:agent-context:2026-04-20:documentation-model
-- canonical-doc:agent-context:2026-04-20:trial-mode
+- canonical-doc:agent-context:2026-06-21:agent-context-overview
+- canonical-doc:agent-context:2026-06-21:documentation-model
+- canonical-doc:agent-context:2026-06-21:trial-mode
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
-- Unused or low-value documents are removed or simplified.
-- The most useful entrypoints and recipes are refined.
+- Unused or low-value authoring materials are removed or simplified.
+- The most useful behavior patterns, instructions, or integration points are refined.
 - A minimal stable set is identified for continued development.
 
 ## Evidence

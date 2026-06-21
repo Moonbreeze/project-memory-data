@@ -11,15 +11,15 @@ work_item_state: open
 
 ## Summary
 
-Write the compact start document for low-cost task bootstrap.
+Define the harness bootstrap flow that starts from bounded project-memory reads rather than target-repository sidecar files.
 
 ## Outcome
 
-An agent can begin work by reading START.md and then choosing one routing document.
+An agent can begin work on a target repository by reading bounded project-memory context and then inspecting only the cited code paths.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, now reframed around the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -28,15 +28,16 @@ An agent can begin work by reading START.md and then choosing one routing docume
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:agent-context-overview
-- canonical-doc:agent-context:2026-04-20:trial-mode
-- decision:agent-context:2026-04-20:agent-context-sidecar-trial
+- canonical-doc:agent-context:2026-06-21:agent-context-overview
+- canonical-doc:agent-context:2026-06-21:trial-mode
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
-- START.md explains project purpose, reading order, and what is usually safe to ignore.
-- START.md links to ENTRYPOINTS.md and other key next reads.
-- START.md remains compact enough to serve as a cheap bootstrap entrypoint.
+- The bootstrap flow explains which bounded project-memory entrypoint should be read first.
+- The flow links task selection to planning or topic reads before broader repository inspection.
+- The startup path does not depend on START.md existing in the target repository.
+- The resulting flow remains compact enough to serve as a cheap bootstrap entrypoint.
 
 ## Evidence
 

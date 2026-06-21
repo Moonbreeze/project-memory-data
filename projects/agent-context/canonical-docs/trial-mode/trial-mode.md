@@ -1,6 +1,6 @@
 ---
-date: 2026-04-20
-recorded_at: 2026-04-20T12:57:52.394Z
+date: 2026-06-21
+recorded_at: 2026-06-21T12:01:42.784Z
 project: agent-context
 topic: trial-mode
 registry_scope: trial-mode
@@ -11,18 +11,19 @@ status: active
 
 ## Summary
 
-The initial operating mode is a sidecar trial: documentation may live near the target repository, be owned by one person at first, and must expose its authority level clearly.
+The current trial validates the authoring-to-runtime pipeline: author workflow guidance in agent-context, deliver behavior via ai-inst/opencode, and bootstrap target-project work from project-memory.
 
 ## Guidance
 
-- The documentation may live outside the main product repository during the initial trial period as a sidecar project.
-- Trial documents must expose their maturity and authority so agents do not mistake exploratory notes for canonical truth.
-- A single start document should declare that the documentation is in trial mode, where it lives, and which documents should be read first.
-- The trial should optimize for proving reduced startup context cost on real tasks before introducing heavier infrastructure such as MCP-backed query surfaces.
-- A thin bridge from the main repository to the sidecar docs is useful so agents can reliably discover the sidecar context.
+- The trial is no longer defined as keeping a sidecar runtime knowledge base near each target repository.
+- Trial work should focus on proving that authoring materials in agent-context can become effective ai-inst modules, skills, and harness instructions.
+- Project-specific context for real tasks should be read from project-memory using bounded entrypoints rather than from repo-local START or ENTRYPOINTS files in unrelated repositories.
+- Trial materials must still expose maturity and authority clearly so exploratory authoring notes are not mistaken for stable runtime policy.
+- A useful trial outcome is a minimal end-to-end flow that connects authoring docs, generated behavior artifacts, and project-memory-backed execution on real tasks.
 
 ## References
 
-- canonical-doc:agent-context:2026-04-20:agent-context-overview
-- canonical-doc:agent-context:2026-04-20:documentation-model
+- canonical-doc:agent-context:2026-06-21:agent-context-overview
+- canonical-doc:agent-context:2026-06-21:documentation-model
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 - decision:agent-context:2026-04-20:agent-context-sidecar-trial

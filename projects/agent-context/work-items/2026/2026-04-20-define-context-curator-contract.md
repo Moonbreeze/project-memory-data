@@ -11,15 +11,15 @@ work_item_state: done
 
 ## Summary
 
-Define the platform-neutral context-curator contract as inputs, outputs, and non-goals.
+Define the platform-neutral context-curator contract as inputs, outputs, non-goals, and bounded project-context assumptions.
 
 ## Outcome
 
-Context-curator is specified without coupling the model to a single vendor workflow.
+Context-curator is specified without coupling the model to a single vendor workflow and without assuming repo-local sidecar knowledge as the project truth source.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, later aligned with the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -27,8 +27,9 @@ Context-curator is specified without coupling the model to a single vendor workf
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:context-curator-model
-- canonical-doc:agent-context:2026-04-20:platform-neutral-curation
+- canonical-doc:agent-context:2026-06-21:context-curator-model
+- canonical-doc:agent-context:2026-06-21:platform-neutral-curation
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 - decision:agent-context:2026-04-20:context-curator-platform-neutral
 
 ## Verification
@@ -36,6 +37,7 @@ Context-curator is specified without coupling the model to a single vendor workf
 - CURATION_CONTRACT.md is created.
 - The contract describes inputs, outputs, non-goals, and trigger conditions.
 - The output shape is standardized as Start here / Also inspect / Pitfalls / Verify.
+- The contract assumes bounded project-specific context comes from project-memory or an equivalent adapter surface rather than from mandatory repo-local sidecar files.
 
 ## Evidence
 

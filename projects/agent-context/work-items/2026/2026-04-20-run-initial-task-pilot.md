@@ -11,15 +11,15 @@ work_item_state: open
 
 ## Summary
 
-Run the model on several real tasks to validate whether agent-context reduces startup context cost.
+Run the project-memory-backed harness model on several real tasks to validate whether bounded startup reduces context cost.
 
 ## Outcome
 
-The team has evidence about whether START, ENTRYPOINTS, and optional RECIPES are enough for low-cost task startup.
+The team has evidence about whether bounded project-memory reads plus shared harness behavior are enough for low-cost task startup.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, now reframed around the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -32,15 +32,16 @@ The team has evidence about whether START, ENTRYPOINTS, and optional RECIPES are
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:agent-context-overview
-- canonical-doc:agent-context:2026-04-20:task-routing
-- canonical-doc:agent-context:2026-04-20:context-curator-model
+- canonical-doc:agent-context:2026-06-21:agent-context-overview
+- canonical-doc:agent-context:2026-06-21:task-routing
+- canonical-doc:agent-context:2026-06-21:context-curator-model
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
 - Run three to five real task trials.
-- For each task, determine whether START plus ENTRYPOINTS and at most one RECIPE were sufficient.
-- Record the gaps that still force broad repository scanning.
+- For each task, determine whether cold-start context plus one planning or topic package and at most one reusable pattern were sufficient.
+- Record the gaps that still force broad repository scanning or require harness-behavior updates.
 
 ## Evidence
 

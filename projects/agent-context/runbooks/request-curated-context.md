@@ -1,6 +1,6 @@
 ---
-date: 2026-04-20
-recorded_at: 2026-04-20T13:06:36.038Z
+date: 2026-06-21
+recorded_at: 2026-06-21T12:01:42.870Z
 project: agent-context
 topic: request-curated-context
 source: agent
@@ -10,15 +10,15 @@ status: active
 
 ## Purpose
 
-Request a minimal routing summary from a context-curator for a concrete change without forcing the main agent to scan the repository broadly.
+Request a minimal routing summary from a context-curator using bounded project-memory context for a concrete change.
 
 ## Procedure
 
-- Provide a short task statement that names the intended change and, if known, the affected product area.
+- Provide a short task statement that names the intended change and the target project slug or equivalent context handle.
 - Include any explicit starting files or directories when they are already known from the request or previous work.
 - Ask for a compressed response in task-routing form rather than a broad architectural explanation.
-- Use the returned summary to inspect the named files first and widen the search only if the route does not explain the change.
-- If the task reveals a new stable path for similar changes, capture that route in the sidecar routing documents after the work is done.
+- Have the curator read bounded project-memory surfaces first and inspect named code paths only after that route is established.
+- If the task reveals new project-specific stable guidance, update project-memory; if it reveals a reusable generic pattern, update the authoring materials in agent-context.
 
 ## Verification
 

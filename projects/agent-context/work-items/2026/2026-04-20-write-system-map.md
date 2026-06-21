@@ -11,15 +11,15 @@ work_item_state: open
 
 ## Summary
 
-Write a concise system map for bounded navigation across major project areas.
+Write the architecture and system map for the authoring repository, build pipeline, and runtime layer split.
 
 ## Outcome
 
-Agents can select the relevant project area without broadly scanning the repository.
+Contributors can distinguish the authoring repo, generated behavior artifacts, and project-memory data surfaces without treating agent-context as a target-project sidecar.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, now reframed around the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -27,14 +27,15 @@ Agents can select the relevant project area without broadly scanning the reposit
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:agent-context-overview
-- canonical-doc:agent-context:2026-04-20:documentation-model
+- canonical-doc:agent-context:2026-06-21:agent-context-overview
+- canonical-doc:agent-context:2026-06-21:documentation-model
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
-- SYSTEM_MAP.md covers the main project zones.
-- Each zone records a path, purpose, and when to read it.
-- The map stays concise and does not duplicate code-level details.
+- The system map covers the main authoring, build, and runtime zones.
+- Each zone records a path or surface, purpose, and when it should be read or used.
+- The map stays concise and does not drift into project-specific code details for unrelated repositories.
 
 ## Evidence
 

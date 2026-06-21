@@ -11,11 +11,11 @@ work_item_state: open
 
 ## Summary
 
-Define how agent-context should be used in opencode to start a fresh Task or subagent for each new work-item by default.
+Define how the opencode harness uses ai-inst behavior and project-memory to start each new work-item in a fresh Task or subagent by default.
 
 ## Outcome
 
-An explicit orchestration policy exists for opencode that defines default fresh-context execution, handoff between work-items, and allowed override cases.
+An explicit orchestration policy exists for fresh work-item startup, bounded reads, handoff between work-items, and allowed override cases.
 
 ## Provenance
 
@@ -27,13 +27,13 @@ An explicit orchestration policy exists for opencode that defines default fresh-
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:context-curator-model
-- canonical-doc:agent-context:2026-04-20:platform-neutral-curation
-- decision:agent-context:2026-04-20:context-curator-platform-neutral
+- canonical-doc:agent-context:2026-06-21:context-curator-model
+- canonical-doc:agent-context:2026-06-21:platform-neutral-curation
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
-- Define the bounded input context that a fresh Task should receive for a new work-item.
+- Define the bounded project-memory input context that a fresh Task should receive for a new work-item.
 - Define the default policy 'new work-item -> new Task or subagent'.
 - Define the allowed override cases for continuing in the same context.
 - Define the handoff contract between a completed work-item and the next work-item.

@@ -11,15 +11,15 @@ work_item_state: done
 
 ## Summary
 
-Create the minimal sidecar file and directory structure for the agent-context trial project.
+Create the initial authoring-repository file and directory structure for agent-context workflow materials.
 
 ## Outcome
 
-The project contains the base document files and directories needed to start the trial documentation model.
+The project contains the base authoring documents and directories needed to design bounded-agent behavior materials and future extraction targets.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, later aligned with the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -27,15 +27,16 @@ The project contains the base document files and directories needed to start the
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:agent-context-overview
-- canonical-doc:agent-context:2026-04-20:documentation-model
-- canonical-doc:agent-context:2026-04-20:trial-mode
+- canonical-doc:agent-context:2026-06-21:agent-context-overview
+- canonical-doc:agent-context:2026-06-21:documentation-model
+- canonical-doc:agent-context:2026-06-21:trial-mode
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
-- Create START.md, ENTRYPOINTS.md, SYSTEM_MAP.md, and CONSTRAINTS.md in agent-context.
-- Create AREAS/, RECIPES/, and RUNBOOKS/ directories.
-- Ensure the initial structure matches the current documentation model.
+- Create initial root documents such as START.md, ENTRYPOINTS.md, SYSTEM_MAP.md, and CONSTRAINTS.md as authoring materials in agent-context.
+- Create AREAS/, RECIPES/, and RUNBOOKS/ directories as bounded source locations for future workflow patterns.
+- Ensure the initial structure matches the current authoring and extraction model rather than presenting itself as canonical runtime storage for unrelated projects.
 
 ## Evidence
 

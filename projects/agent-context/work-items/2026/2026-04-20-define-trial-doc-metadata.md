@@ -11,15 +11,15 @@ work_item_state: open
 
 ## Summary
 
-Introduce a unified metadata header format for trial and canonical documents.
+Define metadata conventions for authoring documents that may later be extracted into ai-inst modules or skills.
 
 ## Outcome
 
-All agent-context documents use an explicit trust and maturity model.
+Authoring sources in agent-context make their role, maturity, and intended extraction target explicit.
 
 ## Provenance
 
-- ad-hoc: Initial implementation planning for the agent-context MVP based on the agreed documentation model and curation approach.
+- ad-hoc: Initial implementation planning for the agent-context MVP, now reframed around the authoring-repo and project-memory split.
 
 ## Dependencies
 
@@ -27,14 +27,15 @@ All agent-context documents use an explicit trust and maturity model.
 
 ## Context
 
-- canonical-doc:agent-context:2026-04-20:documentation-model
-- canonical-doc:agent-context:2026-04-20:trial-mode
+- canonical-doc:agent-context:2026-06-21:documentation-model
+- canonical-doc:agent-context:2026-06-21:trial-mode
+- decision:agent-context:2026-06-21:authoring-repo-project-memory-split
 
 ## Verification
 
-- Define a shared header format for new documents.
-- Provide a reusable template for document creation.
-- Make trial and canonical documents distinguishable by status and authority.
+- Define a shared metadata or frontmatter format for new authoring documents.
+- Make authoring sources distinguishable from project-memory runtime records by role and authority.
+- Record the intended extraction target when a document is meant to become a module, skill, template, or other behavior artifact.
 
 ## Evidence
 
