@@ -11,11 +11,11 @@ work_item_state: open
 
 ## Summary
 
-Define how the opencode harness uses ai-inst behavior and project-memory to start each new work-item in a fresh Task or subagent by default.
+Define how the opencode harness uses ai-inst behavior and project-memory for fresh work-item startup, same-context overrides, and orchestrator-first delegation policy.
 
 ## Outcome
 
-An explicit orchestration policy exists for fresh work-item startup, bounded reads, handoff between work-items, and allowed override cases.
+An explicit opencode orchestration policy exists for fresh work-item startup, bounded reads, handoff between work-items, allowed same-context overrides, subagent delegation thresholds, and minimal handoff/tool-partition rules.
 
 ## Provenance
 
@@ -30,6 +30,7 @@ An explicit orchestration policy exists for fresh work-item startup, bounded rea
 - canonical-doc:agent-context:2026-06-21:context-curator-model
 - canonical-doc:agent-context:2026-06-21:platform-neutral-curation
 - decision:agent-context:2026-06-21:authoring-repo-project-memory-split
+- decision:agent-context:2026-06-22:orchestrator-first-delegation
 
 ## Verification
 
@@ -37,6 +38,10 @@ An explicit orchestration policy exists for fresh work-item startup, bounded rea
 - Define the default policy 'new work-item -> new Task or subagent'.
 - Define the allowed override cases for continuing in the same context.
 - Define the handoff contract between a completed work-item and the next work-item.
+- Define when the orchestrator should execute directly instead of spawning a subagent.
+- Define when spawning a subagent is justified in opencode.
+- Define the default read-only subagent profile and primary-only heavy tool guidance.
+- Define the default path-not-content handoff rule for delegated helpers.
 - Ensure the policy can connect to future platform adapters without hard-coding one vendor workflow.
 - Startup does not require creating repo-local harness files in the target repository.
 
