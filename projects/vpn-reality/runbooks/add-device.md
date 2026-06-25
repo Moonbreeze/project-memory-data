@@ -1,6 +1,6 @@
 ---
 date: 2026-04-12
-recorded_at: 2026-04-12T15:16:00Z
+recorded_at: 2026-04-12T15:16:00.000Z
 project: vpn-reality
 topic: add-device
 source: agent
