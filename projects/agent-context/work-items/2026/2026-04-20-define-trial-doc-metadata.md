@@ -5,7 +5,7 @@ project: agent-context
 topic: define-trial-doc-metadata
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -39,4 +39,5 @@ Authoring sources in agent-context make their role, maturity, and intended extra
 
 ## Evidence
 
-- none
+- session-note:agent-context:2026-06-27:define-trial-doc-metadata
+- verification-result:agent-context:2026-06-27:define-trial-doc-metadata
