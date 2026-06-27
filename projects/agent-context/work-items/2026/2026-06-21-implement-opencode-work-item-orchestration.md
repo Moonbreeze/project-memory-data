@@ -5,7 +5,7 @@ project: agent-context
 topic: implement-opencode-work-item-orchestration
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -48,4 +48,5 @@ Opencode can start a new work-item from bounded project-memory reads by default,
 
 ## Evidence
 
-- none
+- session-note:agent-context:2026-06-27:implement-opencode-work-item-orchestration
+- verification-result:agent-context:2026-06-27:implement-opencode-work-item-orchestration
