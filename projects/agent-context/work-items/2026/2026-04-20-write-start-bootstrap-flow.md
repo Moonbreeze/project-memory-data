@@ -5,7 +5,7 @@ project: agent-context
 topic: write-start-bootstrap-flow
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -41,4 +41,5 @@ An agent can begin work on a target repository by reading bounded project-memory
 
 ## Evidence
 
-- none
+- session-note:agent-context:2026-06-27:write-start-bootstrap-flow
+- verification-result:agent-context:2026-06-27:write-start-bootstrap-flow
