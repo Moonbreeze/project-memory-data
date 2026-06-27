@@ -5,7 +5,7 @@ project: agent-context
 topic: define-external-agent-context-entrypoint
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -41,4 +41,5 @@ The harness can start bootstrap on arbitrary repositories by resolving the proje
 
 ## Evidence
 
-- none
+- session-note:agent-context:2026-06-27:define-external-agent-context-entrypoint
+- verification-result:agent-context:2026-06-27:define-external-agent-context-entrypoint
