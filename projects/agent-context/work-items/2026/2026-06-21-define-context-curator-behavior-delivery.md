@@ -5,7 +5,7 @@ project: agent-context
 topic: define-context-curator-behavior-delivery
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -45,4 +45,5 @@ A delivery model exists for Claude, Codex, and Cursor bindings that reuses share
 
 ## Evidence
 
-- none
+- session-note:agent-context:2026-06-27:define-context-curator-behavior-delivery
+- verification-result:agent-context:2026-06-27:define-context-curator-behavior-delivery
