@@ -5,7 +5,7 @@ project: agent-context
 topic: define-opencode-work-item-orchestration
 source: agent
 status: active
-work_item_state: open
+work_item_state: done
 ---
 # Work Item
 
@@ -47,4 +47,5 @@ An explicit opencode orchestration policy exists for fresh work-item startup, bo
 
 ## Evidence
 
-- none
+- session-note:agent-context:2026-06-27:define-opencode-work-item-orchestration
+- verification-result:agent-context:2026-06-27:define-opencode-work-item-orchestration
