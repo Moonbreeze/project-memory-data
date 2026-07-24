@@ -1,6 +1,6 @@
 ---
-date: 2026-06-25
-recorded_at: 2026-06-25T18:23:38.954Z
+date: 2026-07-24
+recorded_at: 2026-07-24T20:24:16.669Z
 project: vpn-reality
 topic: clients
 registry_scope: client-setup
@@ -19,6 +19,7 @@ status: active
 - При перевыдаче профиля клиентам брать актуальные live REALITY параметры именно из `relay-public` на relay: текущие `pbk` и `sid` не восстанавливать по старым сообщениям или устаревшим runbook-шаблонам после ротаций/восстановлений.
 - Android: если устройству нужен split routing, проект использует Karing + sing-box + TUN, а не Hiddify-Next. Но при массовом отказе нескольких устройств одновременно сначала исключать серверный REALITY/relay-side сбой, а не списывать симптом на Karing.
 - Android: Hiddify-Next допустим только как упрощённый клиент без custom split routing, если устройство не требует direct-исключений для российских сервисов.
+- Huawei/EMUI: если Karing на одном устройстве периодически переподключается или кнопка подключения начинает мигать, при том что другие устройства на том же контуре стабильны, сначала считать это client-side power management проблемой. Для Karing снять battery optimization, включить manual app launch / autostart и при необходимости системный `Always-on VPN` перед relay-side диагностикой.
 - Windows: Karing + sing-box + TUN остаётся основным стеком. Для полного захвата CLI/desktop трафика Karing должен быть запущен `Run as administrator`, а `TUN Mode` должен быть реально поднят, не только включён в UI.
 - Для split routing используется одна и та же логика Karing: private/local traffic остаётся direct, а custom diversion group `ru-blocked` с действием `Current Selected` использует remote rule-set'ы runetfreedom. На Windows возможны process-based direct exceptions; на Android доступны package-id based exceptions, если позже понадобится выводить отдельные приложения из VPN.
 - Проверять клиентский выход нужно командами `curl -4 https://api4.ipify.org` и `curl https://api64.ipify.org`, где это возможно; ожидаемый результат — IPv4 `147.45.196.137` и IPv6 DE-exit. На Android, где CLI-проверка неудобна, минимумом считаются `ya.ru` с российским IP и домен из `ru-blocked`, который открывается через туннель.
@@ -32,9 +33,11 @@ status: active
 - verification-result:vpn-reality:2026-04-12:stage3-yandex-cloud-relay
 - verification-result:vpn-reality:2026-04-12:windows-karing-tun-routing
 - verification-result:vpn-reality:2026-06-25:relay-public-cloudflare-mask-recovery
+- verification-result:vpn-reality:2026-07-24:huawei-karing-emui-battery-fix
 - decision:vpn-reality:2026-04-12:windows-karing-tun-over-system-proxy
 - decision:vpn-reality:2026-04-12:android-karing-over-hiddify-for-split-routing
 - decision:vpn-reality:2026-04-11:geoip-ru-blackhole
 - decision:vpn-reality:2026-06-25:cloudflare-mask-over-microsoft-for-reality
 - https://github.com/KaringX/karing
 - https://github.com/hiddify/hiddify-app
+- https://dontkillmyapp.com/huawei

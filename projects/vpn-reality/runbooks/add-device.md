@@ -1,6 +1,6 @@
 ---
-date: 2026-04-12
-recorded_at: 2026-04-12T15:16:00.000Z
+date: 2026-07-24
+recorded_at: 2026-07-24T20:24:17.037Z
 project: vpn-reality
 topic: add-device
 source: agent
@@ -19,11 +19,10 @@ status: active
 - Windows: запускать `Karing` через `Run as administrator`, иначе `TUN` не поднимется.
 - Android/Windows: `Add Profiles` → импортировать профиль через `Import from Clipboard` или `Import Profile File`. Выбрать импортированный профиль как активный.
 - Android: при первом подключении подтвердить системное VPN-разрешение для `Karing`.
+- Huawei/EMUI: если устройство Huawei, сразу проверить, что для `Karing` снята battery optimization, включены manual app launch / autostart и при необходимости системный `Always-on VPN`; при периодическом мигании кнопки подключения сначала лечить это как power management issue, а не как серверный сбой.
 - Android/Windows: `Settings -> Diversion` → выставить `Country Or Region` по фактической стране пользователя. Для текущего сценария проекта это `Russia`, чтобы Karing добавил региональные geosite/geoip diversion rules.
 - Android/Windows: в `Diversion rules` оставить включённым `Private network direct connection`.
-- Android/Windows: `Settings -> Diversion -> Diversion rules -> Edit -> Custom diversion group` → создать группу `ru-blocked`. Внутрь добавить два правила типа `Rule Set`:
-- `https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/sing-box/rule-set-geosite/geosite-ru-blocked.srs`
-- `https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/sing-box/rule-set-geoip/geoip-ru-blocked-community.srs`
+- Android/Windows: `Settings -> Diversion -> Diversion rules -> Edit -> Custom diversion group` → создать группу `ru-blocked`. Внутрь добавить два правила типа `Rule Set`: `https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/sing-box/rule-set-geosite/geosite-ru-blocked.srs` и `https://raw.githubusercontent.com/runetfreedom/russia-v2ray-rules-dat/release/sing-box/rule-set-geoip/geoip-ru-blocked-community.srs`.
 - Android/Windows: вернуться в `Diversion rules` и для группы `ru-blocked` выставить действие `Current Selected`, затем переподключить VPN.
 - Android: базовая проверка — `ya.ru` открывается и показывает российский IP, а домен из `ru-blocked` открывается только через VPN-маршрут.
 - Windows: если Telegram Desktop использует отдельный MTProto и не должен идти через VPN, создать группу `telegram-direct` и задать ей действие `Direct`. Внутрь добавить правило `Process name = Telegram.exe`. Если это не матчится, заменить на точный `Process path` к `Telegram.exe`. Оба типа правил в Karing чувствительны к регистру.
@@ -33,6 +32,7 @@ status: active
 ## Verification
 
 - Android/Windows: профиль импортирован в `Karing`, `Country Or Region` выставлен по фактической стране, `ru-blocked` группа активна.
+- Huawei/EMUI: для `Karing` снята battery optimization, включены manual app launch / autostart, если устройство проявляло фоновые отвалы.
 - Windows: Karing запущен от администратора, `TUN` активен.
 - `ya.ru` и другие российские домены открываются с российским IP клиента.
 - Хотя бы один заблокированный в РФ домен из `ru-blocked` открывается через туннель.
