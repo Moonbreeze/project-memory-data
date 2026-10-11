@@ -4,7 +4,7 @@ recorded_at: 2026-10-11T08:46:37.863Z
 project: vpn-reality
 topic: vdsina-ru-relay-trial
 source: agent
-status: active
+status: archived
 work_item_state: done
 ---
 # Work Item
