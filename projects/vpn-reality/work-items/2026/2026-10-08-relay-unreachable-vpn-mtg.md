@@ -4,8 +4,8 @@ recorded_at: 2026-10-08T05:34:44.197Z
 project: vpn-reality
 topic: relay-unreachable-vpn-mtg
 source: agent
-status: active
-work_item_state: blocked
+status: archived
+work_item_state: canceled
 ---
 # Work Item
 
